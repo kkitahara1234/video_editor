@@ -1,0 +1,112 @@
+# === 機密ファイル ===
+.env
+.env.*
+*.env
+
+# === 動画・音声（巨大）===
+*.mp4
+*.wav
+*.m4a
+
+# === Whisper 文字起こし ===
+script_check.xlsx
+
+# === Node.js ===
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+npm-debug.log*
+pnpm-debug.log*
+
+# === バックアップファイル全般 ===
+*.bak
+*.bak.*
+*.bak_*
+*.bak2
+*.bak[0-9]*
+
+# === .OLD リネーム済みファイル ===
+*.OLD.*
+shorts.OLD.*/
+
+# === .bak ディレクトリ ===
+*.bak.*/
+src.bak.*/
+docs.bak.*/
+
+# === Git 内部リポジトリ（リネーム済み）===
+.git.bak/
+
+# === ビルド・キャッシュ ===
+dist/
+build/
+.cache/
+out/
+
+# === Remotion 一時 ===
+tmp_remotion/
+tmp_remotion_studio/
+
+# === 書き出し動画（再生成可）===
+wellness-video/out/
+wellness-video/shorts/data/output/
+wellness-video/shorts/data/clips/
+wellness-video/shorts/data/work/
+
+# === 長尺 master.json（巨大）===
+wellness-video/master.json
+wellness-video/master.json.*
+
+# === 長尺 work ディレクトリ ===
+wellness-video/work/
+
+# === 長尺 public（symlink 先は巨大動画）===
+wellness-video/public
+wellness-video/shorts/public
+
+# === subtitles CSV ===
+wellness-video/subtitles*.csv
+wellness-video/subtitles\ *.csv
+
+# === review HTML（再生成可）===
+wellness-video/shorts/review.html
+
+# === OS 関連 ===
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+Thumbs.db
+.fseventsd/
+.Spotlight-V100/
+.TemporaryItems/
+.Trashes/
+
+# === エディタ ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === Claude Code 設定 ===
+.claude/
+
+# === .agents（Remotion skill 等、外部取得物）===
+.agents/
+
+# === Excel 一時 ===
+~$*.xlsx
+
+# === Python キャッシュ ===
+__pycache__/
+*.pyc
+
+# === 一時分析 CSV（ルート直下）===
+/*.csv
+
+# === 素材ディレクトリ ===
+素材/
+
+# === dictionary.json 重複コピー（正典は wellness-shared/）===
+wellness-video/dictionary.json

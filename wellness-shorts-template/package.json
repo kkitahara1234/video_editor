@@ -1,0 +1,42 @@
+{
+  "name": "shorts",
+  "version": "1.0.0",
+  "description": "縦型ショート切り抜き共用ツール（複数の長尺プロジェクトで使い回し）",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "step1": "tsx scripts/analyze-step1.ts",
+    "step2": "tsx scripts/analyze-step2-v2.ts",
+    "ingest": "tsx scripts/ingest.ts",
+    "diagnose": "tsx scripts/diagnose-issues.ts",
+    "review": "tsx scripts/generate-review.ts",
+    "export": "tsx scripts/export-to-excel.ts",
+    "import": "tsx scripts/import-from-excel.ts",
+    "render": "remotion render src/index.ts ShortClip"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.457",
+    "@remotion/cli": "4.0.457",
+    "@remotion/media-utils": "4.0.457",
+    "@remotion/renderer": "4.0.457",
+    "dotenv": "16.4.5",
+    "kuromoji": "^0.1.2",
+    "openai": "4.67.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.457",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/kuromoji": "^0.1.3",
+    "@types/node": "22.7.0",
+    "@types/react": "19.2.3",
+    "tsx": "4.19.0",
+    "typescript": "5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
