@@ -98,3 +98,39 @@ ShortClip: 案B + front（確定済み）。将来 dialogue 対応時に Composi
 - 重要技術制約の発見
 
 セッション終了時、変更があれば更新を確認すること。
+
+### Git コミットルール
+
+リポジトリ: https://github.com/kkitahara1234/video_editor
+
+#### コミットすべきタイミング
+
+- **1プロジェクト終了時**: 長尺1本完成 or ショート全件完成等の節目
+  - 例: "Project: wellness-video 長尺動画完成"
+  - 例: "Project: wellness-video ショート全件完成"
+- **テンプレート改善時**: split-rules / theme.ts / scripts 等の改善完了
+  - 例: "Improve: split-rules に新ルール追加"
+- **重要な区切り**: デザイン変更、設計変更、新機能追加等
+  - 例: "Refactor: theme/types 統合、Composition 1本化"
+
+#### コミットしないでよい場面
+
+- 1ショートずつの作業途中
+- 動作確認前
+- 小さな typo 修正のみ
+
+#### コミット手順
+
+```bash
+cd /Volumes/編集用/
+git status      # 何が変わったか確認
+git add -A      # 全部保存対象に
+git commit -m "メッセージ"
+git push        # GitHub にアップロード
+```
+
+#### 機密管理
+
+- .env / xlsx / mp4 / wav は .gitignore で除外済み
+- 機密情報は絶対に commit しない
+- 万一 commit してしまったら戦略Claude に相談（履歴削除が必要）
