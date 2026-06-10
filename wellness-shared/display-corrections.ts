@@ -17,6 +17,8 @@ export const DISPLAY_CORRECTIONS: Array<[RegExp, string]> = [
   [/(?<!The\s)[Ww]ell[\s\-]?[Bb]eing/g,                           "The Well-being"],
   // ─ スペース変種（dictionary 不可）─
   [/クロス\s+FM/g,                                                 "CROSS FM"],
+  // ─ 「時」→「とき」（形式名詞、正規表現必須）─
+  [/([するたれてっいのな])時(?![間刻代計差点期分秒給空候速進制限効因報距系列節])/g, "$1とき"],
   // ─ 句読点除去（部分一致、dictionary 不可）─
   [/[、。]/g, ""],
 ];
