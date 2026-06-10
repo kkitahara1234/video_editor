@@ -129,8 +129,11 @@ def main():
             print(f'  行{row}: 「{orig}」が{count}回出現')
 
     if not args.dry_run and applied > 0:
-        # バックアップ
-        bak = f"{args.script}.bak.{int(time.time())}"
+        # メタデータに最終手動編集タイムスタンプ
+        from datetime import datetime, timezone
+        if '_meta' not in script:
+            script['_meta'] = {}
+        script['_meta']['lastManualEditAt'] = datetime.now(timezone.utc).isoformat()
         # 書き込み
         with open(args.script, 'w', encoding='utf-8') as f:
             json.dump(script, f, ensure_ascii=False, indent=2)

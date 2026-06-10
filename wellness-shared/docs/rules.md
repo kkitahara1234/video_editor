@@ -206,3 +206,9 @@
 - master.json が変わった時のみ
 - 北原さんの明示的指示がある時のみ
 - 実行前に必ず xlsx 修正案を保護（バックアップ + 反映）
+
+### prepare.ts 安全装置（自動）
+- script.json に `_meta.lastManualEditAt` がある場合、prepare.ts は自動停止
+- 「手動修正済みのため再生成すると失われます」と警告
+- 選択肢 A) apply_dictionary_to_script.py または B) --force-overwrite を案内
+- 北原さんが特殊フラグを覚える必要なし

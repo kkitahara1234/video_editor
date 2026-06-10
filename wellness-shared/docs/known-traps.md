@@ -165,6 +165,7 @@
   - **apply_dictionary_to_script.py** で既存 script.json に dictionary だけ追加適用（prepare.ts 経由しない）
   - prepare.ts は master.json が変わった時 + 北原さん明示指示時のみ
   - xlsx 修正案は Google Drive 版履歴で復元可能
+  - **prepare.ts 安全装置**: `_meta.lastManualEditAt` 検出時にエラー停止、選択肢 A/B を案内。スクリプトレベルで強制防止
 - 教訓: 「dictionary 追加 → prepare.ts 再実行」は**禁止パターン**。dictionary 単独適用なら手動修正を保護できる
 
 ### 罠8-2: データ未確認の決めつけ

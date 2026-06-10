@@ -20,8 +20,35 @@ const args = parseArgs(process.argv);
 const whisperPath = args.whisper;
 const topicsPath  = args.topics;
 const outPath     = args.out ?? "public/script.json";
+const forceOverwrite = args["force-overwrite"] === "true" || process.argv.includes("--force-overwrite");
 
 if (!whisperPath || !topicsPath) process.exit(1);
+
+// ── 安全装置: 手動修正済み script.json の保護 ──
+if (existsSync(resolve(outPath)) && !forceOverwrite) {
+  try {
+    const existing = JSON.parse(readFileSync(resolve(outPath), "utf-8"));
+    if (existing._meta?.lastManualEditAt) {
+      const editedAt = existing._meta.lastManualEditAt;
+      console.error("");
+      console.error("❌ 出力先に手動修正済みの script.json が存在します");
+      console.error(`   ファイル: ${resolve(outPath)}`);
+      console.error(`   最終編集: ${editedAt}`);
+      console.error("");
+      console.error("   再生成すると北原さんの修正が失われます。");
+      console.error("");
+      console.error("   選択肢:");
+      console.error("   A) dictionary 追加だけしたい場合:");
+      console.error("      python3 scripts/apply_dictionary_to_script.py --script <path>");
+      console.error("   B) 強制再生成する場合:");
+      console.error("      --force-overwrite フラグを追加");
+      console.error("");
+      process.exit(1);
+    }
+  } catch {
+    // JSON 読めない or _meta なし → そのまま続行
+  }
+}
 
 type WhisperWord    = { word: string; start: number; end: number };
 type WhisperSegment = { start: number; end: number; text: string; words: WhisperWord[] };
