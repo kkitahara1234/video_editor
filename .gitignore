@@ -48,28 +48,30 @@ tmp_remotion/
 tmp_remotion_studio/
 
 # === 書き出し動画（再生成可）===
-wellness-video/out/
-wellness-video/shorts/data/output/
-wellness-video/shorts/data/clips/
-wellness-video/shorts/data/work/
+**/out/
+**/data/output/
+**/data/clips/
+**/data/work/
 
-# === 長尺 master.json（巨大）===
-wellness-video/master.json
-wellness-video/master.json.*
+# === master.json（Whisper 出力、巨大）===
+**/master.json
+**/master.json.*
 
-# === 長尺 work ディレクトリ ===
-wellness-video/work/
+# === work ディレクトリ ===
+**/work/
 
-# === 長尺 public（symlink 先は巨大動画）===
-wellness-video/public
-wellness-video/shorts/public
+# === public（巨大動画の実体 or symlink）===
+**/public/
 
 # === subtitles CSV ===
-wellness-video/subtitles*.csv
-wellness-video/subtitles\ *.csv
+**/subtitles*.csv
 
 # === review HTML（再生成可）===
-wellness-video/shorts/review.html
+**/review.html
+
+# === baseline バックアップ（検証用、再生成可）===
+*.baseline
+*.baseline.*
 
 # === OS 関連 ===
 .DS_Store
@@ -109,4 +111,5 @@ __pycache__/
 素材/
 
 # === dictionary.json 重複コピー（正典は wellness-shared/）===
-wellness-video/dictionary.json
+**/dictionary.json
+!wellness-shared/dictionary.json
