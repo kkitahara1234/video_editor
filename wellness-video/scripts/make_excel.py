@@ -1,5 +1,5 @@
-import json, os, re, argparse
-from openpyxl import Workbook
+import json, os, re, argparse, datetime, shutil
+from openpyxl import Workbook, load_workbook
 from openpyxl.styles import PatternFill, Font, Alignment
 
 parser = argparse.ArgumentParser(description='script.json → script_check.xlsx 変換')
@@ -114,6 +114,24 @@ for row in ws.iter_rows(min_row=2, min_col=9, max_col=11):
         cell.alignment = Alignment(wrap_text=True, vertical='top')
 
 out = args.xlsx
+
+# ── 既存 xlsx バックアップ（修正案上書き防止）──
+if os.path.exists(out):
+    try:
+        old_wb = load_workbook(out)
+        old_ws = old_wb.active
+        j_filled = sum(1 for row in range(2, old_ws.max_row + 1) if old_ws.cell(row, 10).value)
+    except Exception:
+        j_filled = 0
+    ts = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    bak_path = f'{out}.bak.{ts}'
+    shutil.copy2(out, bak_path)
+    if j_filled > 0:
+        print(f'⚠️  既存 xlsx に J列入力 {j_filled}件あり！')
+        print(f'   バックアップ保存: {bak_path}')
+    else:
+        print(f'既存 xlsx をバックアップ: {bak_path}')
+
 wb.save(out)
 
 print(f"✅ 保存: {out}")

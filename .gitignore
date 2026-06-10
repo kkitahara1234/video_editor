@@ -9,7 +9,7 @@
 *.m4a
 
 # === Whisper 文字起こし ===
-script_check.xlsx
+*.xlsx
 
 # === Node.js ===
 node_modules/

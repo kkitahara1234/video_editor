@@ -11,6 +11,7 @@ learn_dictionary.py — CSV 修正から辞書パターンを学習して dictio
   5. dictionary.json に追記（重複・衝突を回避）
 """
 
+import argparse
 import difflib
 import json
 from pathlib import Path
@@ -90,10 +91,17 @@ def is_safe_for_dict(old_str: str, new_str: str, master_text: str) -> bool:
 
 
 def main() -> None:
-    baseline_path = Path("/tmp/script_baseline.json")
-    current_path  = Path("public/script.json")
-    master_path   = Path("master.json")
-    dict_path     = Path("dictionary.json")
+    parser = argparse.ArgumentParser(description='script.json の修正差分から辞書パターンを学習')
+    parser.add_argument('--baseline', default='/tmp/script_baseline.json', help='修正前の script.json')
+    parser.add_argument('--script', default='public/script.json', help='修正後の script.json')
+    parser.add_argument('--master', default='public/master.json', help='Whisper 生データ master.json')
+    parser.add_argument('--dictionary', default='/Volumes/編集用/wellness-shared/dictionary.json', help='dictionary.json パス')
+    args = parser.parse_args()
+
+    baseline_path = Path(args.baseline)
+    current_path  = Path(args.script)
+    master_path   = Path(args.master)
+    dict_path     = Path(args.dictionary)
 
     for p in [baseline_path, current_path, master_path, dict_path]:
         if not p.exists():
