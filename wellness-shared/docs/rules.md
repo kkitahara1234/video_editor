@@ -165,3 +165,27 @@
 | A4-A5（スペース） | `str.strip()` で自動削除 |
 | A6（オーバーラップ） | endSec を次のstartSec - 0.01に調整 |
 | A7（cps>=20） | RESPLITで前テロップに文字を移動、または分割数を増やす |
+
+---
+
+## H. xlsx 取り扱いルール（事故防止）
+
+### xlsx は北原さんの作業領域
+- script_check.xlsx は北原さんの目視チェック・修正記入用
+- 戦略Claude / Claude Code は基本「読み取り専用」扱い
+- 勝手に再生成しない
+
+### make_excel.py 実行ルール
+- 初回の xlsx 生成: OK
+- 北原さんの修正案を script.json に反映した後の再生成: OK（北原さん許可必須）
+- dictionary 追加で script.json が変わった時: **xlsx は再生成しない**
+- 戦略Claude の独自判断のみで実行: **禁止**
+
+### J列入力警告の対応
+- make_excel.py 実行時「J列入力 X件あり」が出たら**停止**
+- 北原さんに確認してから続行
+- バックアップは自動だが、念のため確認
+
+### dictionary 追加と xlsx の関係
+- dictionary に追加しても既存 xlsx は再生成不要
+- apply_xlsx_proposals_textmatch.py でテキストマッチ反映可能
