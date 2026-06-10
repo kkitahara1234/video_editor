@@ -155,14 +155,17 @@
 
 ## 罠8: xlsx 取り扱い事故
 
-### 罠8-1: xlsx 上書きで北原さんの修正案消失
-- 症状: 北原さんが J列に87件の修正案を記入済みの xlsx が make_excel.py 再実行で白紙に
-- 原因: dictionary 追加のたびに「prepare → make_excel」を自動連鎖実行、J列入力チェックなし
+### 罠8-1: xlsx 上書き + prepare.ts 再実行で北原さんの修正案消失
+- 症状:
+  - 1回目: make_excel.py 再実行で xlsx J列上書き
+  - 2回目: dictionary 追加後 prepare.ts 再実行で script.json の手動修正消失
+- 原因: dictionary 追加 → prepare.ts 再実行を機械的に連鎖、prepare.ts は master.json からゼロ生成するため手動修正を上書き
 - 対処:
-  - make_excel.py に自動バックアップ + J列入力警告を実装済み（cb7c220）
-  - xlsx 再生成は北原さんの明示的指示がある時のみ
-  - dictionary 追加 ≠ xlsx 再生成（別タスク扱い）
-- 教訓: 「dictionary 追加 → prepare → make_excel」を自動連鎖させない。各ステップで立ち止まる
+  - make_excel.py に自動バックアップ + J列入力警告（cb7c220）
+  - **apply_dictionary_to_script.py** で既存 script.json に dictionary だけ追加適用（prepare.ts 経由しない）
+  - prepare.ts は master.json が変わった時 + 北原さん明示指示時のみ
+  - xlsx 修正案は Google Drive 版履歴で復元可能
+- 教訓: 「dictionary 追加 → prepare.ts 再実行」は**禁止パターン**。dictionary 単独適用なら手動修正を保護できる
 
 ### 罠8-2: データ未確認の決めつけ
 - 症状: 復元版 xlsx の cam-ID 不一致を「別プロジェクト用」と誤判断

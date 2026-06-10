@@ -189,3 +189,20 @@
 ### dictionary 追加と xlsx の関係
 - dictionary に追加しても既存 xlsx は再生成不要
 - apply_xlsx_proposals_textmatch.py でテキストマッチ反映可能
+
+### dictionary 追加時の正しいフロー
+
+正しい手順:
+1. dictionary.json に追記
+2. `apply_dictionary_to_script.py --script <path> --dry-run` で差分確認
+3. `apply_dictionary_to_script.py --script <path>` で既存 script.json に追加適用
+4. xlsx 再生成は北原さん許可後のみ
+
+禁止パターン:
+- dictionary 追加 → prepare.ts 再実行 → make_excel.py 実行
+- これは北原さんの手動修正を消失させる（罠8-1）
+
+### prepare.ts 実行条件
+- master.json が変わった時のみ
+- 北原さんの明示的指示がある時のみ
+- 実行前に必ず xlsx 修正案を保護（バックアップ + 反映）
