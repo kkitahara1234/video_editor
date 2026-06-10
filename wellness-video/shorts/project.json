@@ -75,5 +75,6 @@
   },
   "sharedDictionary": "/Volumes/編集用/wellness-shared/dictionary.json",
   "talkType": "monologue",
-  "cameraMode": "front"
+  "cameraMode": "front",
+  "xlsxPath": "/Volumes/編集用/script_check.xlsx"
 }

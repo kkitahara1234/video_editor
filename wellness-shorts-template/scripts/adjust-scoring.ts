@@ -10,7 +10,6 @@ import * as path from 'path';
 import { loadXlsxTelops, XlsxTelop } from './lib/xlsx-loader.js';
 import { loadConfig } from './lib/loadConfig.js';
 
-const XLSX_PATH = '/Volumes/編集用/script_check.xlsx';
 const MAX_EXTEND_SEC = 15;
 const LONG_GAP_THRESHOLD = 0.5;
 
@@ -70,7 +69,7 @@ async function main() {
   // 読み込み
   const scoring = JSON.parse(fs.readFileSync(scoringPath, 'utf-8'));
   const candidates = scoring.suggestedAutoSelection || scoring.allCandidatesRanked;
-  const allTelops = loadXlsxTelops(XLSX_PATH);
+  const allTelops = loadXlsxTelops(config.xlsxPath);
 
   // 時刻順にソート
   allTelops.sort((a, b) => a.startSec - b.startSec);

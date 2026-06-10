@@ -58,4 +58,5 @@ export type ProjectConfig = {
     temperature: number;
   };
   sharedDictionary: string;
+  xlsxPath: string;
 };

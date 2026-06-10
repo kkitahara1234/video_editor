@@ -18,7 +18,6 @@ import { loadXlsxTelops, XlsxTelop } from './lib/xlsx-loader.js';
 import { loadConfig } from './lib/loadConfig.js';
 import { callGptJson } from './lib/gpt-client.js';
 
-const XLSX_PATH = '/Volumes/編集用/script_check.xlsx';
 const CONTEXT_RANGE_SEC = 30;
 const MIN_DURATION = 60;
 const MAX_DURATION = 180;
@@ -95,7 +94,7 @@ async function main() {
 
   const scoring = JSON.parse(fs.readFileSync(scoringPath, 'utf-8'));
   const candidates = scoring.suggestedAutoSelection || scoring.allCandidatesRanked;
-  const allTelops = loadXlsxTelops(XLSX_PATH);
+  const allTelops = loadXlsxTelops(config.xlsxPath);
   allTelops.sort((a, b) => a.startSec - b.startSec);
 
   const targets = onlyShortId ? candidates.filter((c: any) => c.shortId === onlyShortId) : candidates;

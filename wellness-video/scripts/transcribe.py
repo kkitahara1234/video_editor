@@ -62,7 +62,12 @@ def extract_audio(video_path: Path, audio_path: Path) -> None:
 
 
 def load_whisper_prompt(script_dir: Path) -> str:
-    """scripts/whisper_terms.txt から用語リストを読み込んでプロンプトを返す。"""
+    """whisper_terms.txt から用語リストを読み込んでプロンプトを返す。"""
+    # 共通辞書（優先）
+    shared_path = Path("/Volumes/編集用/wellness-shared/whisper_terms.txt")
+    if shared_path.exists():
+        return shared_path.read_text(encoding="utf-8").strip()
+    # フォールバック: スクリプト同階層
     terms_path = script_dir / "whisper_terms.txt"
     if terms_path.exists():
         return terms_path.read_text(encoding="utf-8").strip()

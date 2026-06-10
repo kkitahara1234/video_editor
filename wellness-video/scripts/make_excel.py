@@ -1,6 +1,10 @@
-import json, os, re
+import json, os, re, argparse
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Alignment
+
+parser = argparse.ArgumentParser(description='script.json → script_check.xlsx 変換')
+parser.add_argument('--xlsx', default='/Volumes/編集用/script_check.xlsx', help='xlsx 出力先パス')
+args = parser.parse_args()
 
 with open('public/script.json','r',encoding='utf-8') as f:
     data = json.load(f)
@@ -109,7 +113,7 @@ for row in ws.iter_rows(min_row=2, min_col=9, max_col=11):
     for cell in row:
         cell.alignment = Alignment(wrap_text=True, vertical='top')
 
-out = '/Volumes/編集用/script_check.xlsx'
+out = args.xlsx
 wb.save(out)
 
 print(f"✅ 保存: {out}")

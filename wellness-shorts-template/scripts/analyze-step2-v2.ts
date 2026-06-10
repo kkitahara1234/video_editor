@@ -20,13 +20,11 @@ import * as path from 'path';
 import { loadConfig } from './lib/loadConfig.js';
 import { loadXlsxTelops, XlsxTelop } from './lib/xlsx-loader.js';
 import { callGptJson } from './lib/gpt-client.js';
-import { fixText } from '../../wellness-shared/display-corrections.js';
+import { fixText, applyDictionary } from '../../wellness-shared/display-corrections.js';
 import type { DetailedCandidate, CandidatesJson, RefinedTelop, TelopEmphasis } from './lib/step2-types.js';
 import { loadCache, saveCache, findEntry, addEntry } from './lib/emphasis-cache.js';
 import kuromoji from 'kuromoji';
 
-const XLSX_PATH = '/Volumes/編集用/script_check.xlsx';
-const DICTIONARY_PATH = '/Volumes/編集用/wellness-shared/dictionary.json';
 const PROPER_NOUNS_PATH = '/Volumes/編集用/wellness-shared/proper-nouns.json';
 const SPLIT_RULES_PATH = '/Volumes/編集用/wellness-shared/split-rules.json';
 const EDIT_PATTERNS_PATH = path.join(process.cwd(), 'data', 'work', 'edit-patterns.json');
@@ -50,10 +48,6 @@ const FILLER_PATTERNS = [
 
 // === コードベース処理 ===
 
-function loadDictionary(dictPath: string): Record<string, string> {
-  if (!fs.existsSync(dictPath)) return {};
-  return JSON.parse(fs.readFileSync(dictPath, 'utf-8'));
-}
 
 type EditPattern = {
   shortId: string;
@@ -118,15 +112,6 @@ function removeFillers(text: string): string {
 
 function removePunctuation(text: string): string {
   return text.replace(/[、。,.，．？！?!]/g, '');
-}
-
-function applyDictionary(text: string, dictionary: Record<string, string>): string {
-  let result = text;
-  const sortedEntries = Object.entries(dictionary).sort((a, b) => b[0].length - a[0].length);
-  for (const [from, to] of sortedEntries) {
-    result = result.split(from).join(to);
-  }
-  return fixText(result);
 }
 
 // split-rules.json からルール読み込み
@@ -748,7 +733,6 @@ type ScoringJson = {
 async function processOneCandidate(
   candidate: ScoringCandidate,
   allTelops: XlsxTelop[],
-  dictionary: Record<string, string>,
   properNouns: string[],
   tokenizer: any,
   editPatterns: EditPattern[],
@@ -772,7 +756,7 @@ async function processOneCandidate(
     let text = t.text;
     text = removeFillers(text);
     text = removePunctuation(text);
-    text = applyDictionary(text, dictionary);
+    text = applyDictionary(text);
     text = text.trim();  // 先頭末尾の余分なスペース除去
     return { text, startSec: t.startSec, endSec: t.endSec, emphasis: [] };
   }).filter(t => t.text.length > 0);
@@ -982,17 +966,15 @@ async function main() {
   const allCandidates = scoring.suggestedAutoSelection ?? scoring.allCandidatesRanked;
   console.log(`✅ scoring.json loaded: ${allCandidates.length} candidates`);
 
-  console.log(`📂 Loading xlsx: ${XLSX_PATH}`);
-  const allTelops = loadXlsxTelops(XLSX_PATH);
+  console.log(`📂 Loading xlsx: ${config.xlsxPath}`);
+  const allTelops = loadXlsxTelops(config.xlsxPath);
   console.log(`✅ xlsx loaded: ${allTelops.length} telops`);
 
   console.log('📂 Initializing kuromoji tokenizer...');
   const tokenizer = await buildTokenizer();
   console.log('✅ kuromoji tokenizer ready');
 
-  const dictionary = loadDictionary(DICTIONARY_PATH);
   const properNouns = loadProperNouns(PROPER_NOUNS_PATH);
-  console.log(`✅ dictionary loaded: ${Object.keys(dictionary).length} entries`);
   console.log(`✅ proper nouns loaded: ${properNouns.length} entries`);
 
   console.log('📂 Loading edit patterns...');
@@ -1024,7 +1006,6 @@ async function main() {
       const { result: detailed, cacheHit } = await processOneCandidate(
         candidate,
         allTelops,
-        dictionary,
         properNouns,
         tokenizer,
         editPatterns,

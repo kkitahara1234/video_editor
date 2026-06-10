@@ -23,7 +23,6 @@ import { loadXlsxTelops, XlsxTelop } from './lib/xlsx-loader.js';
 import { filterActiveTopics, Topic } from './lib/topic-filter.js';
 import { callGptJson } from './lib/gpt-client.js';
 
-const XLSX_PATH = '/Volumes/編集用/script_check.xlsx';
 const MAX_CANDIDATES_PER_TOPIC = 2;
 
 type Candidate = {
@@ -202,8 +201,8 @@ async function main() {
   const maxShorts = Math.round(ratio * config.shortsCount.maxPer);
   console.log(`📊 Shorts count range: ${minShorts}〜${maxShorts} (ratio=${ratio.toFixed(2)})`);
 
-  console.log(`📂 Loading xlsx: ${XLSX_PATH}`);
-  const allTelops = loadXlsxTelops(XLSX_PATH);
+  console.log(`📂 Loading xlsx: ${config.xlsxPath}`);
+  const allTelops = loadXlsxTelops(config.xlsxPath);
   console.log(`✅ xlsx loaded: ${allTelops.length} telops`);
 
   let targetTopics = activeTopics;

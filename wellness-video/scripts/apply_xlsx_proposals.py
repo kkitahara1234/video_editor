@@ -19,10 +19,16 @@ import sys
 import os
 import time
 import shutil
+import argparse
 from openpyxl import load_workbook
 
+_parser = argparse.ArgumentParser(description='script_check.xlsx の修正案を script.json に適用')
+_parser.add_argument('--dry-run', action='store_true', help='diff のみ表示、書き込みしない')
+_parser.add_argument('--xlsx', default='/Volumes/編集用/script_check.xlsx', help='xlsx 入力パス')
+_args = _parser.parse_args()
+
 SCRIPT_JSON = os.path.join(os.path.dirname(__file__), "..", "public", "script.json")
-XLSX_PATH = "/Volumes/編集用/script_check.xlsx"
+XLSX_PATH = _args.xlsx
 MAX_LEN = 25
 
 # xlsx 列番号 (1-based)
@@ -34,7 +40,7 @@ COL_ACTION = 11
 
 
 def main():
-    dry_run = "--dry-run" in sys.argv
+    dry_run = _args.dry_run
 
     # ── xlsx 読み込み ──
     if not os.path.exists(XLSX_PATH):

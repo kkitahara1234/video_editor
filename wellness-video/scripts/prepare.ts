@@ -2,6 +2,7 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { loadDefaultJapaneseParser } from "budoux";
+import { applyDictionary } from "../../wellness-shared/display-corrections";
 
 const budouxParser = loadDefaultJapaneseParser();
 
@@ -689,6 +690,14 @@ function postProcessFixBoundaries(entries: TelopEntry[]): TelopEntry[] {
 
 for (const segId of Object.keys(subtitles)) {
   subtitles[segId] = postProcessFixBoundaries(subtitles[segId]);
+}
+
+// ── dictionary + 正規表現補正 ─────────────────────────────────
+for (const segId of Object.keys(subtitles)) {
+  subtitles[segId] = subtitles[segId].map(entry => ({
+    ...entry,
+    text: applyDictionary(entry.text),
+  }));
 }
 
 writeFileSync(
