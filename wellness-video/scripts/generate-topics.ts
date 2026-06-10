@@ -12,7 +12,7 @@
  */
 
 import OpenAI from "openai";
-import { readFileSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { config as dotenvConfig } from "dotenv";
 dotenvConfig();
@@ -30,10 +30,21 @@ function parseArgs(argv: string[]): Record<string, string> {
 const args = parseArgs(process.argv);
 const whisperPath = args.whisper ?? "master.json";
 const outPath = args.out ?? "work/topics.json";
+const promptPath = args.prompt ?? "topics-prompt.txt";
 
 type WhisperSegment = { start: number; end: number; text: string };
 type WhisperOutput = { segments: WhisperSegment[] };
 type TopicEntry = { id: string; label: string; startSec: number; endSec: number };
+
+// ── プロンプトコンテキスト読み込み ──────────────────────────────────────────
+const resolvedPromptPath = resolve(promptPath);
+if (!existsSync(resolvedPromptPath)) {
+  console.error(`❌ プロンプトファイルが見つかりません: ${resolvedPromptPath}`);
+  console.error("  --prompt <file> で指定するか、CWD に topics-prompt.txt を配置してください。");
+  process.exit(1);
+}
+const promptContext = readFileSync(resolvedPromptPath, "utf-8").trim();
+console.log(`📋 プロンプト読み込み: ${resolvedPromptPath}`);
 
 // ── Whisper データ読み込み ───────────────────────────────────────────────────
 const whisper: WhisperOutput = JSON.parse(readFileSync(resolve(whisperPath), "utf-8"));
@@ -52,7 +63,7 @@ const client = new OpenAI();
 
 const systemPrompt = `あなたはラジオ番組の編集アシスタントです。
 Whisperが文字起こしした日本語ラジオ番組のトランスクリプトを解析し、
-番組全体の流れを理解した上で、自然な章立て（トピック区切り）を作成してください。
+話題の切り替わりに沿って章立て（トピック区切り）を作成してください。
 
 出力は必ず以下の JSON 配列形式のみで返してください（説明文は不要）:
 [
@@ -61,18 +72,21 @@ Whisperが文字起こしした日本語ラジオ番組のトランスクリプ�
 ]
 
 ルール:
-- 章数は 4〜8 個が目安（多すぎず少なすぎず）
+- **話題が切り替わるたびに新章を作成すること**（個数の制約なし）
+- **「1つ目は〜」「2つ目は〜」「次に〜」「そして〜」等の明示的な区切りを検知し、それぞれを独立した章にすること**
+- **列挙形式（例: 「4つの要素」「3つのポイント」等）の場合、各要素を別章にすること**
+- 1つの章に異なる話題を混ぜないこと
 - label は画面右上に表示されるため 10文字以内の日本語で
 - startSec/endSec は正確な整数秒で（最初は必ず 0、最後は必ず ${totalDuration}）
 - 連続した章の境界は一致させること（前の endSec = 次の startSec）
 - id は "intro", "topic1", "topic2", ... "outro" の形式
 - オープニング・エンディングは必ず独立した章にする`;
 
-const userPrompt = `以下はラジオ番組「The Well-being」（Dr.中田 航太郎 のウェルネス番組）の文字起こしです。
-総尺: ${totalDuration}秒 (${(totalDuration/60).toFixed(1)}分)
+const userPrompt = `以下はラジオ番組の文字起こしです。
 
-ゲスト: 栗恵美（AIハブ CMO / ピニョキオ CEO）
-準レギュラー: 橋本真希（レインツリー）
+${promptContext}
+
+総尺: ${totalDuration}秒 (${(totalDuration/60).toFixed(1)}分)
 
 文字起こし:
 ${transcript}

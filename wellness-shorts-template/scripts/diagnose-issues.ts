@@ -63,6 +63,8 @@ const patterns: Array<{name: string, regex?: RegExp, between?: (c:string,n:strin
   { name: 'よう+な/に/だ', between: (c,n) => c.endsWith('よう') && /^(な|に|だ|で|です)/.test(n) },
   { name: 'しま+う系', between: (c,n) => c.endsWith('しま') && /^う/.test(n) },
   { name: 'うみた+い', between: (c,n) => c.endsWith('うみた') && /^い/.test(n) },
+  // === 接尾辞分断 ===
+  { name: 'が+ち（がち分断）', between: (c,n) => c.endsWith('が') && n.startsWith('ち') && /[ぁ-んァ-ン一-龯]/.test(c.slice(-2, -1)) },
   // === テロップ長 ===
   { name: '3字以下テロップ', regex: /^.{1,3}$/ },
   { name: 'proper-noun 分断', proper: true },
