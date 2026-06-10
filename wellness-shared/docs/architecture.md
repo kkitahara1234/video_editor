@@ -134,3 +134,28 @@ git push        # GitHub にアップロード
 - .env / xlsx / mp4 / wav は .gitignore で除外済み
 - 機密情報は絶対に commit しない
 - 万一 commit してしまったら戦略Claude に相談（履歴削除が必要）
+
+### 新プロジェクト開始時の必須確認
+
+API 呼び出し（Whisper、GPT 等）を実行する前に、戦略Claude は以下のドキュメント全件を必ず確認すること。
+
+#### 確認必須ドキュメント
+
+1. wellness-shared/docs/rules.md（長尺テロップルール）
+2. wellness-shared/docs/telop-display-rules.md（ショートテロップ正典）
+3. wellness-shared/docs/split-rules.md（分割実装仕様）
+4. wellness-shared/docs/known-patterns.md（分断パターン辞典）
+5. wellness-shared/docs/known-traps.md（既知の罠）
+6. wellness-shared/docs/PLAYBOOK.md（長尺ワークフロー）
+7. wellness-shorts-template/docs/PLAYBOOK.md（ショートワークフロー）
+8. wellness-shared/proper-nouns.json（固有名詞）
+9. wellness-shared/dictionary.json（Whisper 補正辞書）
+10. wellness-shared/whisper_terms.txt（Whisper API ヒント）
+11. wellness-shared/split-rules.json（分割ルール JSON）
+12. wellness-shared/display-corrections.ts（表示補正）
+
+#### 禁止事項
+
+- 上記ドキュメント全件確認せずに API 呼び出し（課金発生）
+- ドキュメント確認なしの「新規実装提案」
+- データを見ずに判断
