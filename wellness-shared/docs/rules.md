@@ -212,3 +212,20 @@
 - 「手動修正済みのため再生成すると失われます」と警告
 - 選択肢 A) apply_dictionary_to_script.py または B) --force-overwrite を案内
 - 北原さんが特殊フラグを覚える必要なし
+
+### Whisper 認識漏れの検出と補完
+
+prepare.ts 実行後の推奨チェック:
+1. master.json の各 segment で末尾 word の duration を確認
+2. 末尾 word が3秒以上 = 認識漏れの疑い
+3. 該当区間を ffmpeg で切り出し → transcribe.py で再実行
+4. 正しい発話を script.json に追加
+
+### 文字起こし修正の分類（dictionary 化判断）
+
+- A: 純粋な誤認識（音→誤った文字）→ dictionary 化可能
+  - 例: ポートフリー→ポートフォリオ、心地ゾール→コルチゾール
+- B: 文末・語頭欠落（〜と思います）→ 文脈依存、dictionary 化不可
+- C: テロップ境界（語の移動、分割位置）→ prepare.ts 改善で対処
+
+注意: 「元と修正後で文字が似てる」だけで境界修正と判断しない。カタカナ誤認識は文字が似ていても dictionary 化可能。
