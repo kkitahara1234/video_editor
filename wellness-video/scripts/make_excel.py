@@ -43,7 +43,7 @@ for cam_id in sorted(subs.keys()):
             'cam_id': cam_id, 'idx_in_cam': idx, 'angle': angle, 'topic': topic,
             'absStart': fmt_time(t.get('absStartSec', 0)),
             'absEnd': fmt_time(t.get('absEndSec', 0)),
-            'duration': round(float(t.get('durationSec', 0)), 2),
+            'duration': round(float(t.get('absEndSec', 0)) - float(t.get('absStartSec', 0)), 2) if t.get('absEndSec') is not None and t.get('absStartSec') is not None else round(float(t.get('durationSec', 0)), 2),
             'text': text, 'len': n, 'flag': flag, 'no_content': no_content,
         })
 
