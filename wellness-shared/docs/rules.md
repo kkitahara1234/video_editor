@@ -229,3 +229,13 @@ prepare.ts 実行後の推奨チェック:
 - C: テロップ境界（語の移動、分割位置）→ prepare.ts 改善で対処
 
 注意: 「元と修正後で文字が似てる」だけで境界修正と判断しない。カタカナ誤認識は文字が似ていても dictionary 化可能。
+
+### 長尺動画の前処理（public/ 配置前）
+
+撮影動画を public/ に置く前に必ず:
+1. `ffprobe -v error -select_streams v:0 -show_entries stream=pix_fmt,codec_name -of default=noprint_wrappers=1 <file>`
+2. yuv420p10le (10bit) なら H.264 8bit 変換:
+   `ffmpeg -i <file> -c:v libx264 -pix_fmt yuv420p -crf 18 -preset medium -c:a aac <out>`
+3. 元ファイルは `_original_10bit/` に退避
+
+理由: Remotion は HEVC 10bit を render 時にデコードできない（Studio は通る）。

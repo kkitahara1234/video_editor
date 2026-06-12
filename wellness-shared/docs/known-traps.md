@@ -186,6 +186,15 @@
 - 症状: 「テロップ切り替わらない」に対しデータ確認せず「テロップ分割」と決めつけ。「を 685-690s」を「話者ポーズ」と決めつけ → 実際は認識漏れ
 - 対処: 症状を最後まで聞いてから提案。データ確認 → 判断の順序厳守。自動分類の前に全件目視
 
+## 罠10: HEVC 10bit 動画が Remotion でレンダリング失敗
+
+### 罠10-1: フレーム0で即死（10bit デコードエラー）
+- 症状: render がフレーム0で即死。Studio プレビューは通るが render で失敗
+  - エラー: "EncodingError: The source image cannot be decoded" / "pixel format YUV420P10LE"
+- 原因: 撮影動画が HEVC 10bit (yuv420p10le)。Remotion の render が 10bit をデコードできない
+- 対処: ffmpeg で H.264 8bit (yuv420p) に変換。元ファイルは _original_10bit/ に退避
+- 教訓: public/ 配置前に ffprobe で pix_fmt 確認。Studio が通っても render で落ちる
+
 ## メンテナンスルール
 
 罠が新規発見されたら即座にこのファイルに追記すること。
