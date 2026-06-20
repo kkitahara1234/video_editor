@@ -25,9 +25,10 @@ from openpyxl import load_workbook
 _parser = argparse.ArgumentParser(description='script_check.xlsx の修正案を script.json に適用')
 _parser.add_argument('--dry-run', action='store_true', help='diff のみ表示、書き込みしない')
 _parser.add_argument('--xlsx', default='/Volumes/編集用/script_check.xlsx', help='xlsx 入力パス')
+_parser.add_argument('--script', default=None, help='script.json パス (省略時は従来の __file__ ベース)')
 _args = _parser.parse_args()
 
-SCRIPT_JSON = os.path.join(os.path.dirname(__file__), "..", "public", "script.json")
+SCRIPT_JSON = _args.script or os.path.join(os.path.dirname(__file__), "..", "public", "script.json")
 XLSX_PATH = _args.xlsx
 MAX_LEN = 25
 

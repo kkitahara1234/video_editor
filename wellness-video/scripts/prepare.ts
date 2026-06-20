@@ -21,6 +21,9 @@ const whisperPath = args.whisper;
 const topicsPath  = args.topics;
 const outPath     = args.out ?? "public/script.json";
 const forceOverwrite = args["force-overwrite"] === "true" || process.argv.includes("--force-overwrite");
+const camerasArg  = args.cameras ?? "front,left,right";
+const CAMERAS: CameraAngle[] = camerasArg.split(",").map(s => s.trim()) as CameraAngle[];
+const SIDE_CAMERAS: CameraAngle[] = CAMERAS.filter(c => c !== "front");
 
 if (!whisperPath || !topicsPath) process.exit(1);
 
@@ -432,22 +435,30 @@ function buildTelopEntries(
 
 const whisper: WhisperOutput = JSON.parse(readFileSync(resolve(whisperPath), "utf-8"));
 const topics: TopicEntry[] = JSON.parse(readFileSync(resolve(topicsPath), "utf-8"));
-let angleState = { onSide: false, frontStreak: 0, sideStreak: 0, lastSide: "left" as "left" | "right", cycleCount: 0 };
+let angleState = { onSide: false, frontStreak: 0, sideStreak: 0, lastSideIdx: 0, cycleCount: 0 };
 
 function nextAngle(st: typeof angleState) {
   const FRONT_THRESHOLDS = [2, 3, 2, 3] as const;
   const SIDE_COUNT = 2;
+
+  // side カメラが無い場合は常に front
+  if (SIDE_CAMERAS.length === 0) {
+    return { angle: "front" as CameraAngle, state: { ...st, frontStreak: st.frontStreak + 1 } };
+  }
+
   if (st.onSide) {
     if (st.sideStreak >= SIDE_COUNT) {
       return { angle: "front" as CameraAngle, state: { ...st, onSide: false, frontStreak: 1, sideStreak: 0 } };
     }
-    const side = st.lastSide;
-    return { angle: side as CameraAngle, state: { ...st, sideStreak: st.sideStreak + 1 } };
+    const side = SIDE_CAMERAS[st.lastSideIdx % SIDE_CAMERAS.length];
+    return { angle: side, state: { ...st, sideStreak: st.sideStreak + 1 } };
   }
   const threshold = FRONT_THRESHOLDS[st.cycleCount % FRONT_THRESHOLDS.length];
   if (st.frontStreak >= threshold) {
-    const side: "left" | "right" = st.lastSide === "right" ? "left" : "right";
-    return { angle: side as CameraAngle, state: { onSide: true, frontStreak: 0, sideStreak: 1, lastSide: side, cycleCount: st.cycleCount + 1 } };
+    // 次の side カメラを選ぶ（SIDE_CAMERAS をローテーション）
+    const nextIdx = (st.lastSideIdx + 1) % SIDE_CAMERAS.length;
+    const side = SIDE_CAMERAS[nextIdx];
+    return { angle: side, state: { onSide: true, frontStreak: 0, sideStreak: 1, lastSideIdx: nextIdx, cycleCount: st.cycleCount + 1 } };
   }
   return { angle: "front" as CameraAngle, state: { ...st, frontStreak: st.frontStreak + 1 } };
 }

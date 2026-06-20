@@ -124,7 +124,20 @@ function isInvalidSplitPos(text: string, splitPos: number, properNouns?: string[
 
   // D/C群: 直後が禁止語で始まる
   for (const prefix of DO_NOT_START_WITH) {
-    if (after.startsWith(prefix)) return true;
+    if (after.startsWith(prefix)) {
+      // 終助詞「な」の例外: 後続が形式名詞(こと/もの/ん/ので/のに)なら許可
+      if (prefix === 'な' && after.length >= 2 && 'こもんの'.includes(after[1])) {
+        continue;
+      }
+      // 「みたいな/みたい」の例外: 後続が形式名詞(こと/もの/ん/の)なら許可
+      if ((prefix === 'みたいな' || prefix === 'みたい') && after.length > prefix.length) {
+        const afterSuffix = after.slice(prefix.length);
+        if ('こもんの'.includes(afterSuffix[0])) {
+          continue;
+        }
+      }
+      return true;
+    }
   }
 
   // C群: 直前+直後の組み合わせ
@@ -338,7 +351,9 @@ function autoSplit12chars(
           prev.pos === '助動詞' ||
           (prev.pos === '助詞' && prev.pos_detail_1 === '接続助詞' && prev.surface_form === 'て')
         );
-        if (!isPrevVerbChain) {
+        // 動詞チェインでも、今のトークンが名詞なら候補（新文節の開始）
+        const isCurrentNoun = tokens[i].pos === '名詞';
+        if (!isPrevVerbChain || isCurrentNoun) {
           if (!candidates.includes(pos)) candidates.push(pos);
           if (TRACE) console.error(`  candidate pos=${pos} (token="${tokens[i].surface_form}" jiritsu=${isBoundary} afterP=${isAfterParticle} nonIndep=${isNonIndependentNoun})`);
         } else {
@@ -360,11 +375,27 @@ function autoSplit12chars(
   // proper-noun の終端位置を分割候補として追加（優先）
   const properEndPositions = new Set<number>(properNounRanges.map(r => r.end));
 
+  // 終助詞行頭回避: 12字位置が終助詞(ね/よ)始まりなら、13字位置を候補に追加
+  const SHUUJOSHI_CHARS = 'ねよ';
+  const extendedCandidates = [...validCandidates];
+  for (const p of validCandidates) {
+    if (p === maxChars && p < telop.text.length) {
+      const afterAtP = telop.text[p];
+      if (SHUUJOSHI_CHARS.includes(afterAtP) && (p + 1) <= maxChars + 1 && (telop.text.length - p - 1) >= 3) {
+        if (!extendedCandidates.includes(p + 1)) {
+          extendedCandidates.push(p + 1);
+        }
+      }
+    }
+  }
+
   const center = Math.floor(telop.text.length / 2);
   let bestSplit = -1;
   let bestDistance = Infinity;
-  for (const p of validCandidates) {
-    if (p <= maxChars && (telop.text.length - p) <= maxChars) {
+  for (const p of extendedCandidates) {
+    if (p <= maxChars + 1 && (telop.text.length - p) <= maxChars) {
+      // 13字は終助詞行頭回避時のみ許容
+      if (p > maxChars && !SHUUJOSHI_CHARS.includes(telop.text[p - 1])) continue;
       const firstText = telop.text.slice(0, p);
       const secondText = telop.text.slice(p);
       if (firstText.endsWith(' ') || secondText.startsWith(' ')) continue;
@@ -503,10 +534,45 @@ function autoSplit12chars(
     let attempts = 0;
     while ((isInvalidSplitPos(telop.text, bestSplit, properNouns) ||
             bestSplit < 4 || (telop.text.length - bestSplit) < 4) && attempts < 10) {
-      if (bestSplit > 2) bestSplit--;
-      else if (bestSplit + 1 < telop.text.length) bestSplit++;
-      else break;
+      const next = bestSplit > 2 ? bestSplit - 1 : bestSplit + 1;
+      // proper-noun 内部への侵入を防ぐ
+      const hitRange = properNounRanges.find(r => next > r.start && next < r.end);
+      if (hitRange) {
+        // proper-noun 終端で分割（DO_NOT_START_WITH より proper-noun 保護優先）
+        if (hitRange.end <= maxChars && (telop.text.length - hitRange.end) >= 1) {
+          bestSplit = hitRange.end;
+        } else if (hitRange.start > 0 && hitRange.start <= maxChars) {
+          bestSplit = hitRange.start;
+        }
+        break;
+      }
+      bestSplit = next;
+      if (next >= telop.text.length || next <= 0) break;
       attempts++;
+    }
+  }
+
+  // 最終ガード: 行頭禁止位置なら行頭OKの最寄り位置へ（再帰が12字超を処理）
+  const LINE_START_GUARD = /^[っッゃゅょャュョーぁぃぅぇぉァィゥェォ]/;
+  if (bestSplit > 0 && bestSplit < telop.text.length) {
+    const afterText = telop.text.slice(bestSplit);
+    if (LINE_START_GUARD.test(afterText)) {
+      let found = false;
+      for (let guard = bestSplit - 1; guard >= 4; guard--) {
+        if (!LINE_START_GUARD.test(telop.text.slice(guard))) {
+          bestSplit = guard;
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        for (let guard = bestSplit + 1; guard < telop.text.length - 1; guard++) {
+          if (!LINE_START_GUARD.test(telop.text.slice(guard))) {
+            bestSplit = guard;
+            break;
+          }
+        }
+      }
     }
   }
 
@@ -844,6 +910,10 @@ async function processOneCandidate(
         };
         const reSplit = autoSplit12chars(tempTelop, properNouns, tokenizer);
         if (reSplit.length >= 2) {
+          // ループ検出: resplit 結果が元の分割と同一なら打ち切り（無限ループ防止）
+          if (reSplit.length === 2 && reSplit[0].text === cur.text && reSplit[1].text === next.text) {
+            continue;
+          }
           console.log(`     🔗 Merge+resplit "${cur.text}" + "${next.text}" → ${reSplit.map(s => '"' + s.text + '"').join(' + ')} (rule: ${matchedRule})`);
           splitTelops.splice(i, 2, ...reSplit);
           i--;
@@ -858,6 +928,25 @@ async function processOneCandidate(
 
   // 3.7. 短いテロップ統合（3字以下を前後と merge）
   const mergedShort = mergeShortTelops(splitTelops, properNouns, tokenizer);
+
+  // 3.7.5. 終助詞行頭吸収（ね/よ が行頭→前テロップに1字吸収、13字まで許容）
+  for (let i = 1; i < mergedShort.length; i++) {
+    const cur = mergedShort[i];
+    const prev = mergedShort[i - 1];
+    if (cur.text.length >= 2 && 'ねよ'.includes(cur.text[0]) && prev.text.length <= 12) {
+      const absorbed = prev.text + cur.text[0];
+      if (absorbed.length <= 13) {
+        const totalDur = cur.endSec - cur.startSec;
+        const charRatio = 1 / cur.text.length;
+        const splitTime = cur.startSec + totalDur * charRatio;
+        prev.text = absorbed;
+        prev.endSec = splitTime;
+        cur.text = cur.text.slice(1);
+        cur.startSec = splitTime;
+        console.log(`     🔗 Absorb shuujoshi "${cur.text[0] || 'ね'}" into prev → "${absorbed}" + "${cur.text}"`);
+      }
+    }
+  }
 
   // 3.8. edit-patterns.json の自動適用
   const patternedTelops = applyEditPatterns(candidate.shortId, mergedShort, editPatterns);

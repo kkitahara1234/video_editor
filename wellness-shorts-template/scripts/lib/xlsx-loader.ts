@@ -57,7 +57,9 @@ export function loadXlsxTelops(xlsxPath: string): XlsxTelop[] {
     const startStr = String(row[5] ?? '');
     const endStr = String(row[6] ?? '');
     const durationSec = Number(row[7] ?? 0);
-    const text = String(row[8] ?? '');
+    // J列(row[9]=修正案)が空でなければ優先、空ならI列(row[8]=テロップ元)
+    const proposal = String(row[9] ?? '').trim();
+    const text = proposal || String(row[8] ?? '');
     const charCount = Number(row[11] ?? text.length);
 
     if (!startStr || !endStr || !text) continue;

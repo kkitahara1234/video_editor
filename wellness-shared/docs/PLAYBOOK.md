@@ -253,7 +253,27 @@ sudo launchctl disable system/com.apple.idleassetsd
 sudo launchctl unload /System/Library/LaunchDaemons/com.apple.idleassetsd.plist
 ```
 
-### Q7: master.json と script.json の境界がズレる
+### Q7: 動画の一部が黒画面になる（2カメプロジェクト）
+**原因**: prepare.ts がデフォルトで front/left/right の3カメローテーションを割り当てるが、2カメプロジェクトには right.mp4 が無い
+
+**対処（恒久）**: prepare.ts 実行時に `--cameras front,left` を指定
+```bash
+npx tsx prepare.ts --whisper master.json --topics work/topics.json --cameras front,left
+```
+
+**対処（応急）**: 既に生成済みの script.json で right が割り当てられている場合
+```bash
+cp public/script.json public/script.json.bak.before_right_to_left
+python3 -c "
+import json
+with open('public/script.json') as f: s=json.load(f)
+for seg in s['segments']:
+    if seg.get('angle')=='right': seg['angle']='left'
+with open('public/script.json','w') as f: json.dump(s,f,ensure_ascii=False,indent=2)
+"
+```
+
+### Q8: master.json と script.json の境界がズレる
 ```bash
 python3 scripts/auto_resync_timing.py \
   --script public/script.json \
@@ -274,6 +294,7 @@ python3 scripts/auto_resync_timing.py \
 | M4 | 不要なプレビュー書き出し | Studio確認するならpreviewレンダリング不要 |
 | M5 | concurrency=2 提案 | 必ず =1 |
 | M6 | 古いキャッシュで angle 切り替えが見えた | Studio起動前に .cache/ クリア必須 |
+| M9 | 2カメなのに right が割り当てられ黒画面 | prepare.ts に `--cameras front,left` を付ける |
 | M7 | RESPLIT後の境界resyncでdur=0発生 | 必ず startSec>=endSec チェック |
 | M8 | 25字超過が結合後に発生 | 結合する前に必ず文字数試算 |
 
@@ -286,6 +307,7 @@ python3 scripts/auto_resync_timing.py \
 2. rules.md を読む
 3. PROJECT_NOTES.md を新規作成（このプロジェクトの固有情報を記載）
 4. master.json から script.json 生成（prepare.ts）
+   ⚠️ 2カメ(front/left)は --cameras front,left 必須（下記参照）
 5. Phase 1: 初期準備（特殊用語抽出 → PROJECT_NOTES.md に記録）
 6. Phase 2-3: テロップレビュー → dry-run → apply
 7. Phase 4: 最終整合性チェック
