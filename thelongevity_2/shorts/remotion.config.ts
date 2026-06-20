@@ -1,0 +1,1 @@
+/Volumes/編集用/wellness-shorts-template/remotion.config.ts

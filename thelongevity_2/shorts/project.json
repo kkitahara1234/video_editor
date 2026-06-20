@@ -1,6 +1,6 @@
 {
-  "projectName": "thelongevity_1",
-  "sourceDir": "/Volumes/編集用/thelongevity_1/public",
+  "projectName": "thelongevity_2",
+  "sourceDir": "/Volumes/編集用/thelongevity_2/public",
   "workDir": "./data/work",
   "outputDir": "./data/output",
   "shortsCount": {
@@ -75,5 +75,5 @@
   "sharedDictionary": "/Volumes/編集用/wellness-shared/dictionary.json",
   "talkType": "monologue",
   "cameraMode": "front",
-  "xlsxPath": "/Volumes/編集用/thelongevity_1/script_check.xlsx"
+  "xlsxPath": "/Volumes/編集用/thelongevity_2/script_check.xlsx"
 }

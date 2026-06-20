@@ -1,0 +1,1 @@
+../../wellness-shorts-template/remotion.config.ts
