@@ -7,7 +7,7 @@ export type TelopData = {
   emphasis?: TelopEmphasis[];
 };
 
-export type CameraType = 'left' | 'right' | 'front';
+export type CameraType = 'left' | 'right' | 'front' | 'host' | 'guest';
 
 export type CameraSwitchData = {
   atSec: number;

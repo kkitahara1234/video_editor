@@ -1,0 +1,224 @@
+{
+  "shortId": "short-003",
+  "title": "趣味が健康を支える",
+  "startSec": 980.5,
+  "endSec": 1030.4,
+  "telops": [
+    {
+      "text": "趣味の方がいい",
+      "startSec": 2.238,
+      "endSec": 3.27,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "んじゃないかなって",
+      "startSec": 3.27,
+      "endSec": 4.597,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "最近は思ってて本当にそ",
+      "startSec": 4.597,
+      "endSec": 6.219,
+      "emphasis": [
+        "start",
+        "end",
+        "label"
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "うだと思います最近うちも",
+      "startSec": 6.219,
+      "endSec": 8.522,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "パーソナルドクターって今",
+      "startSec": 8.522,
+      "endSec": 10.824,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 9,
+          "label": "パーソナルドクター"
+        }
+      ],
+      "speaker": "host"
+    },
+    {
+      "text": "30人以上いるんですけど",
+      "startSec": 10.824,
+      "endSec": 13.127,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "趣味が豊富な先生を",
+      "startSec": 13.127,
+      "endSec": 14.854,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "どんどん取っていきたいな",
+      "startSec": 14.854,
+      "endSec": 17.156,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "と思って切り口で",
+      "startSec": 17.156,
+      "endSec": 18.691,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "医者もやっぱり医学を勉強",
+      "startSec": 18.691,
+      "endSec": 20.994,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "してるだけでは全然",
+      "startSec": 20.994,
+      "endSec": 22.721,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "仲良くなれる",
+      "startSec": 22.721,
+      "endSec": 23.872,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "度合いがよくなっちゃ",
+      "startSec": 23.872,
+      "endSec": 25.791,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "うんでワイン好きだとか",
+      "startSec": 25.791,
+      "endSec": 27.902,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "サウナ好きだとか",
+      "startSec": 27.902,
+      "endSec": 29.437,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "ゴルフ好きだとか何かが",
+      "startSec": 29.437,
+      "endSec": 31.548,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "趣味がちゃんとある",
+      "startSec": 31.548,
+      "endSec": 33.275,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "先生というかそうすると",
+      "startSec": 33.275,
+      "endSec": 35.385,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "そういう人の方が",
+      "startSec": 35.385,
+      "endSec": 36.92,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "医学だけやってると",
+      "startSec": 36.92,
+      "endSec": 38.647,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "病気なければいいでしょみ",
+      "startSec": 38.647,
+      "endSec": 40.95,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "たいなとかそ",
+      "startSec": 40.95,
+      "endSec": 41.67,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "れは死なないから",
+      "startSec": 41.67,
+      "endSec": 42.638,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "大丈夫とかそういう",
+      "startSec": 42.638,
+      "endSec": 43.728,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "話になっちゃうんですけど",
+      "startSec": 43.728,
+      "endSec": 45.18,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "そういう趣味楽しんでる",
+      "startSec": 45.18,
+      "endSec": 46.512,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "先生だと趣味とかを",
+      "startSec": 46.512,
+      "endSec": 47.601,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "楽しむためにはどうや",
+      "startSec": 47.601,
+      "endSec": 48.812,
+      "emphasis": [],
+      "speaker": "host"
+    }
+  ],
+  "cameraSwitches": [
+    {
+      "atSec": 0,
+      "camera": "guest"
+    },
+    {
+      "atSec": 6.22,
+      "camera": "host"
+    }
+  ]
+}

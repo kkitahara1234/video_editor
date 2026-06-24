@@ -1,0 +1,343 @@
+{
+  "shortId": "short-004",
+  "title": "健康と美味しい食事",
+  "startSec": 950.3,
+  "endSec": 1004,
+  "telops": [
+    {
+      "text": "いい人生を",
+      "startSec": 0.004000000000019099,
+      "endSec": 0.1347692307692796,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "送るために大切に",
+      "startSec": 0.1347692307692796,
+      "endSec": 0.34400000000005093,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "していることって",
+      "startSec": 0.34400000000005093,
+      "endSec": 1.316000000000031,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "どんなことが",
+      "startSec": 1.316000000000031,
+      "endSec": 2.0450000000000728,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ありますかそうですね",
+      "startSec": 2.0450000000000728,
+      "endSec": 4.78735294117655,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "程度に",
+      "startSec": 4.78735294117655,
+      "endSec": 5.437029411764797,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "もよると思うんですけど",
+      "startSec": 5.437029411764797,
+      "endSec": 7.819176470588218,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "おいしいご飯とお酒は",
+      "startSec": 7.819176470588218,
+      "endSec": 9.408000000000015,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 6,
+          "label": "おいしいご飯"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "我慢しないって",
+      "startSec": 9.408000000000015,
+      "endSec": 10.819307692307689,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 5,
+          "label": "我慢しない"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "いうことがや",
+      "startSec": 10.819307692307689,
+      "endSec": 12.028999999999996,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "っぱり一番でして",
+      "startSec": 12.028999999999996,
+      "endSec": 13.273888888888905,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 6,
+          "label": "やっぱり一番"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "本当昔から",
+      "startSec": 13.273888888888905,
+      "endSec": 14.045667892156871,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "食べることも大好きですし",
+      "startSec": 14.045667892156871,
+      "endSec": 15.897937500000012,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 5,
+          "label": "食べること"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "格安推食した理由も",
+      "startSec": 15.897937500000012,
+      "endSec": 17.271000000000072,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "お酒が好きだからっていう",
+      "startSec": 17.271000000000072,
+      "endSec": 18.343941176470594,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 5,
+          "label": "お酒が好き"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "そうなんで",
+      "startSec": 18.343941176470594,
+      "endSec": 18.791000000000054,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "すかそうなんです",
+      "startSec": 18.791000000000054,
+      "endSec": 20.692000000000007,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "お酒が好きで格安に",
+      "startSec": 20.752000000000066,
+      "endSec": 23.114000000000033,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 5,
+          "label": "お酒が好き"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "就職するって",
+      "startSec": 23.114000000000033,
+      "endSec": 23.314000000000078,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "珍しくないですか運びたか",
+      "startSec": 23.314000000000078,
+      "endSec": 23.714000000000055,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ったみたいな",
+      "startSec": 23.714000000000055,
+      "endSec": 23.852461538461625,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "興味があること",
+      "startSec": 23.852461538461625,
+      "endSec": 24.01400000000001,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "って食べることと",
+      "startSec": 24.01400000000001,
+      "endSec": 24.192222222222313,
+      "emphasis": [
+        {
+          "start": 2,
+          "end": 7,
+          "label": "食べること"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "飲むことあと釣りしか",
+      "startSec": 24.192222222222313,
+      "endSec": 24.415000000000077,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "当時はなかったので",
+      "startSec": 24.415000000000077,
+      "endSec": 28.293999999999983,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "一番就職しや",
+      "startSec": 28.293999999999983,
+      "endSec": 30.879999999999995,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "すそうなところがお酒の",
+      "startSec": 30.879999999999995,
+      "endSec": 36.92400000000009,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "格安だったっていう",
+      "startSec": 36.92400000000009,
+      "endSec": 38.10035294117654,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "だけなんですよね",
+      "startSec": 38.10035294117654,
+      "endSec": 39.14600000000007,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "すごいそんだけ",
+      "startSec": 39.399,
+      "endSec": 40.940166666666755,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "好きなんですねはいだか",
+      "startSec": 40.940166666666755,
+      "endSec": 43.36200000000008,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ら本当にもう",
+      "startSec": 43.36200000000008,
+      "endSec": 43.976470588235316,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "何ですかねビールは何が",
+      "startSec": 43.976470588235316,
+      "endSec": 45.103000000000065,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "あってもやめたくないし",
+      "startSec": 45.103000000000065,
+      "endSec": 46.30138888888894,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "食べたいものは",
+      "startSec": 46.30138888888894,
+      "endSec": 47.06400000000008,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "食べたいって",
+      "startSec": 47.06400000000008,
+      "endSec": 48.00466666666671,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "思ってはいるんですけどで",
+      "startSec": 48.00466666666671,
+      "endSec": 49.88600000000008,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "も健康に継続的に",
+      "startSec": 49.88600000000008,
+      "endSec": 51.006888888888966,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "美味しいご飯とお酒を",
+      "startSec": 51.006888888888966,
+      "endSec": 52.408000000000015,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "食べたいなって思っては",
+      "startSec": 52.408000000000015,
+      "endSec": 53.178,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "いるのでなんか",
+      "startSec": 53.178,
+      "endSec": 53.668000000000006,
+      "emphasis": [],
+      "speaker": "guest"
+    }
+  ],
+  "cameraSwitches": [
+    {
+      "atSec": 0.004000000000019099,
+      "camera": "guest"
+    }
+  ]
+}

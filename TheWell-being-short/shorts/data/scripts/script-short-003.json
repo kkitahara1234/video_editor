@@ -1,0 +1,259 @@
+{
+  "shortId": "short-003",
+  "title": "サステナブルな選択",
+  "startSec": 681.5,
+  "endSec": 726.5,
+  "telops": [
+    {
+      "text": "これはですね今お話",
+      "startSec": 0.9900000000000091,
+      "endSec": 3.0710000000000264,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "しさせていただいていた",
+      "startSec": 3.0710000000000264,
+      "endSec": 5.076666666666597,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "メーカーさんの",
+      "startSec": 5.076666666666597,
+      "endSec": 6.352999999999952,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "過剰在庫だとか",
+      "startSec": 6.352999999999952,
+      "endSec": 6.613000000000056,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "焼却処分されてしまう",
+      "startSec": 6.613000000000056,
+      "endSec": 8.120058823529462,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "きれいなお洋服",
+      "startSec": 8.120058823529462,
+      "endSec": 9.174999999999955,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 7,
+          "label": "きれいなお洋服"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "だけをセレクトして",
+      "startSec": 9.174999999999955,
+      "endSec": 12.076999999999998,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ヴィンテージショップ要は",
+      "startSec": 12.076999999999998,
+      "endSec": 14.437999999999988,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "サステナブル×",
+      "startSec": 14.437999999999988,
+      "endSec": 15.286647058823519,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 6,
+          "label": "サステナブル"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "ヴィンテージブランド",
+      "startSec": 15.286647058823519,
+      "endSec": 16.499000000000024,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "っていうのを",
+      "startSec": 16.499000000000024,
+      "endSec": 17.139400000000023,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "コンセプトテーマに",
+      "startSec": 17.139400000000023,
+      "endSec": 18.100000000000023,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "して買っていただけたら",
+      "startSec": 18.100000000000023,
+      "endSec": 20.276777777777852,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "10%ぐらいは",
+      "startSec": 20.276777777777852,
+      "endSec": 21.662000000000035,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 3,
+          "label": "10%"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "ですね環境の団体に",
+      "startSec": 21.662000000000035,
+      "endSec": 23.222999999999956,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "寄付させていただく",
+      "startSec": 23.222999999999956,
+      "endSec": 24.371062499999994,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "みたいな感じで",
+      "startSec": 24.371062499999994,
+      "endSec": 25.26400000000001,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "来ていただく方はで",
+      "startSec": 25.26400000000001,
+      "endSec": 26.54499999999996,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "すねブランド品好きとか",
+      "startSec": 26.54499999999996,
+      "endSec": 28.166000000000054,
+      "emphasis": [
+        {
+          "start": 2,
+          "end": 9,
+          "label": "ブランド品好き"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "安く買えたら",
+      "startSec": 28.226,
+      "endSec": 30.181666666666615,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 6,
+          "label": "安く買えたら"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "いいなっていうことの他に",
+      "startSec": 30.181666666666615,
+      "endSec": 34.09299999999996,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "買っていただけたら",
+      "startSec": 34.09299999999996,
+      "endSec": 35.99041176470587,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "環境問題に同時に",
+      "startSec": 35.99041176470587,
+      "endSec": 37.67700000000002,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 4,
+          "label": "環境問題"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "寄与できますよ",
+      "startSec": 37.67700000000002,
+      "endSec": 39.58141176470588,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 6,
+          "label": "寄与できます"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "みたいなそんな風にで",
+      "startSec": 39.58141176470588,
+      "endSec": 42.30200000000002,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "すねただ可愛いだけじゃ",
+      "startSec": 42.30200000000002,
+      "endSec": 42.70594444444441,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "なくてちゃんと",
+      "startSec": 42.70594444444441,
+      "endSec": 42.962999999999965,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "社会にも貢献",
+      "startSec": 42.962999999999965,
+      "endSec": 43.71412499999997,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "できるみたいな感じの",
+      "startSec": 43.71412499999997,
+      "endSec": 44.96600000000001,
+      "emphasis": [],
+      "speaker": "guest"
+    }
+  ],
+  "cameraSwitches": [
+    {
+      "atSec": 0.9900000000000091,
+      "camera": "guest"
+    }
+  ]
+}

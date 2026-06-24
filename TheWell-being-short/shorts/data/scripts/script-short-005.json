@@ -1,0 +1,424 @@
+{
+  "shortId": "short-005",
+  "title": "健康意識の重要性",
+  "startSec": 1462.1,
+  "endSec": 1549.5,
+  "telops": [
+    {
+      "text": "健康っていうことに",
+      "startSec": 0.04300000000012005,
+      "endSec": 4.332625000000007,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ちょうど本当に",
+      "startSec": 4.332625000000007,
+      "endSec": 7.669000000000096,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "今年気になっていたことで",
+      "startSec": 7.669000000000096,
+      "endSec": 12.104764705882417,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "自分自身が",
+      "startSec": 12.104764705882417,
+      "endSec": 13.953000000000202,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "うち眼科系なので",
+      "startSec": 13.953000000000202,
+      "endSec": 15.5150000000001,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "自分がいつがんになるかも",
+      "startSec": 15.995000000000118,
+      "endSec": 21.496000000000095,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "しれないっていう",
+      "startSec": 21.496000000000095,
+      "endSec": 23.360000000000127,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "結構恐怖みたいなの",
+      "startSec": 23.360000000000127,
+      "endSec": 25.457000000000107,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "あったんですけど",
+      "startSec": 25.457000000000107,
+      "endSec": 27.377615384615638,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "まだ若いか",
+      "startSec": 27.377615384615638,
+      "endSec": 28.578000000000202,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "らみたいな",
+      "startSec": 28.578000000000202,
+      "endSec": 29.578000000000202,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "感じでですね26ぐらいの",
+      "startSec": 29.578000000000202,
+      "endSec": 31.978000000000065,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "気持ちのまま",
+      "startSec": 31.978000000000065,
+      "endSec": 32.27338461538466,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ずっと仕事とか",
+      "startSec": 32.27338461538466,
+      "endSec": 32.618000000000166,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "頑張ってきたって",
+      "startSec": 32.618000000000166,
+      "endSec": 33.427333333333536,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "いうのもあってそこで",
+      "startSec": 33.427333333333536,
+      "endSec": 34.43900000000008,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "このウェルネスっていう",
+      "startSec": 34.43900000000008,
+      "endSec": 35.01099999999997,
+      "emphasis": [
+        {
+          "start": 2,
+          "end": 7,
+          "label": "ウェルネス"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "アプリを",
+      "startSec": 35.01099999999997,
+      "endSec": 35.21900000000005,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ダウンロードして",
+      "startSec": 35.21900000000005,
+      "endSec": 35.614294117647205,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "健康診断して結果を",
+      "startSec": 35.614294117647205,
+      "endSec": 36.0590000000002,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "見てそんなに若くないぞ",
+      "startSec": 36.0590000000002,
+      "endSec": 37.709611111111144,
+      "emphasis": [
+        {
+          "start": 6,
+          "end": 10,
+          "label": "若くない"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "ちゃんとしっか",
+      "startSec": 37.709611111111144,
+      "endSec": 38.75999999999999,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 4,
+          "label": "ちゃんと"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "り今の自分の足元を",
+      "startSec": 38.75999999999999,
+      "endSec": 39.79500000000007,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "見ようっていう",
+      "startSec": 39.79500000000007,
+      "endSec": 40.600000000000136,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "経験がこの1ヶ月の",
+      "startSec": 40.92000000000007,
+      "endSec": 41.559999999999945,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "中で一番自分の中で",
+      "startSec": 41.559999999999945,
+      "endSec": 42.200000000000045,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "大きい気づきというか",
+      "startSec": 42.200000000000045,
+      "endSec": 43.96066666666684,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "いつまでも",
+      "startSec": 43.96066666666684,
+      "endSec": 44.84100000000012,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "若いわけじゃ",
+      "startSec": 44.84100000000012,
+      "endSec": 45.48766666666688,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "なくてちゃんと年相に今の",
+      "startSec": 45.48766666666688,
+      "endSec": 46.781000000000176,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "現状を把握",
+      "startSec": 46.781000000000176,
+      "endSec": 47.212562500000104,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "することって大事だなと",
+      "startSec": 47.212562500000104,
+      "endSec": 48.162000000000035,
+      "emphasis": [
+        {
+          "start": 6,
+          "end": 8,
+          "label": "大事"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "担当のお医者さんの",
+      "startSec": 48.162000000000035,
+      "endSec": 53.75364705882362,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "方女医さんなんで",
+      "startSec": 53.75364705882362,
+      "endSec": 58.72400000000016,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "すけどからアドバイ",
+      "startSec": 58.72400000000016,
+      "endSec": 60.04449999999997,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "スいただきつつ数値",
+      "startSec": 60.04449999999997,
+      "endSec": 61.36500000000001,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "を見てすごく感じたこと",
+      "startSec": 61.36500000000001,
+      "endSec": 63.00500000000011,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "リアルですね",
+      "startSec": 64.50500000000011,
+      "endSec": 65.84652941176478,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "結構ですねそれが自分の",
+      "startSec": 65.84652941176478,
+      "endSec": 68.30600000000004,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "中でこの1ヶ月の中で",
+      "startSec": 68.30600000000004,
+      "endSec": 70.14700000000016,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "大きいインパクト",
+      "startSec": 70.14700000000016,
+      "endSec": 71.39271428571442,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 3,
+          "label": "大きい"
+        }
+      ],
+      "speaker": "host"
+    },
+    {
+      "text": "あったことで",
+      "startSec": 71.39271428571442,
+      "endSec": 72.327,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "すね本当大事ですよね",
+      "startSec": 72.327,
+      "endSec": 74.10262499999999,
+      "emphasis": [
+        {
+          "start": 2,
+          "end": 4,
+          "label": "本当"
+        }
+      ],
+      "speaker": "host"
+    },
+    {
+      "text": "健康ってほと",
+      "startSec": 74.10262499999999,
+      "endSec": 75.16800000000012,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "んどの人が",
+      "startSec": 75.16800000000012,
+      "endSec": 76.17417647058846,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "失って気づくのでなかなか",
+      "startSec": 76.17417647058846,
+      "endSec": 78.58900000000017,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "無限に自分の",
+      "startSec": 78.58900000000017,
+      "endSec": 79.42900000000009,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "健康はあるはずだ",
+      "startSec": 79.42900000000009,
+      "endSec": 80.47400000000016,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "と思ってしまいがちな",
+      "startSec": 80.47400000000016,
+      "endSec": 81.78025000000002,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "んですけれども",
+      "startSec": 81.78025000000002,
+      "endSec": 82.62900000000013,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "残念ながら",
+      "startSec": 82.62900000000013,
+      "endSec": 83.6524615384617,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 5,
+          "label": "残念ながら"
+        }
+      ],
+      "speaker": "host"
+    },
+    {
+      "text": "確率論的に一定で",
+      "startSec": 83.6524615384617,
+      "endSec": 85.29000000000019,
+      "emphasis": [],
+      "speaker": "host"
+    }
+  ],
+  "cameraSwitches": [
+    {
+      "atSec": 0.04300000000012005,
+      "camera": "guest"
+    },
+    {
+      "atSec": 64.50500000000011,
+      "camera": "host"
+    }
+  ]
+}

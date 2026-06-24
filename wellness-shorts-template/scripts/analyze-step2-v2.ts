@@ -122,6 +122,24 @@ function isInvalidSplitPos(text: string, splitPos: number, properNouns?: string[
   // splitPos の直後の文字列を取得
   const after = text.slice(splitPos);
 
+  // 助詞行頭禁止（ルールブック§3）: 後半先頭が助詞で、接続詞パターンでない場合
+  // 接続詞例外: でも/では/でね/でして, とか/とは/ところ/とも, もう/もし/もちろん/もともと, にも/にし
+  const JOSHI_CHARS = 'でとはがをにも';
+  if (after.length > 0 && JOSHI_CHARS.includes(after[0])) {
+    const SETSUZOKU_PATTERNS = [
+      'でも', 'では', 'でね', 'でして', 'ですね', 'ですけど', 'ですが',
+      'とか', 'とは', 'ところ', 'とも', 'と思', 'と言', 'という',
+      'もう', 'もし', 'もちろん', 'もともと', 'ものの',
+      'にも', 'にし', 'にく', 'について',
+      'はい', 'はず',
+      'がん',
+    ];
+    const isSetsuzoku = SETSUZOKU_PATTERNS.some(p => after.startsWith(p));
+    if (!isSetsuzoku) {
+      return true;
+    }
+  }
+
   // D/C群: 直後が禁止語で始まる
   for (const prefix of DO_NOT_START_WITH) {
     if (after.startsWith(prefix)) {
@@ -267,15 +285,15 @@ function autoSplit12chars(
       const result: RefinedTelop[] = [];
 
       if (beforeText.trim().length > 0) {
-        const beforeTelop = { text: beforeText.trim(), startSec: telop.startSec, endSec: properStart, emphasis: [] as TelopEmphasis[] };
+        const beforeTelop = { text: beforeText.trim(), startSec: telop.startSec, endSec: properStart, emphasis: [] as TelopEmphasis[], speaker: telop.speaker };
         result.push(...autoSplit12chars(beforeTelop, properNouns, tokenizer, maxChars));
       }
 
-      result.push({ text: properText, startSec: properStart, endSec: properEnd, emphasis: [] });
+      result.push({ text: properText, startSec: properStart, endSec: properEnd, emphasis: [], speaker: telop.speaker });
       console.log(`     🔒 Kept proper-noun "${properText}" (${properLen} chars, exceeds maxChars)`);
 
       if (afterText.trim().length > 0) {
-        const afterTelop = { text: afterText.trim(), startSec: properEnd, endSec: telop.endSec, emphasis: [] as TelopEmphasis[] };
+        const afterTelop = { text: afterText.trim(), startSec: properEnd, endSec: telop.endSec, emphasis: [] as TelopEmphasis[], speaker: telop.speaker };
         result.push(...autoSplit12chars(afterTelop, properNouns, tokenizer, maxChars));
       }
 
@@ -316,8 +334,8 @@ function autoSplit12chars(
 
       console.log(`     ✂️  Space split: "${telop.text}" → "${beforeText}" + "${afterText}"`);
 
-      const beforeTelop = { text: beforeText, startSec: telop.startSec, endSec: splitSec, emphasis: [] as TelopEmphasis[] };
-      const afterTelop = { text: afterText, startSec: splitSec, endSec: telop.endSec, emphasis: [] as TelopEmphasis[] };
+      const beforeTelop = { text: beforeText, startSec: telop.startSec, endSec: splitSec, emphasis: [] as TelopEmphasis[], speaker: telop.speaker };
+      const afterTelop = { text: afterText, startSec: splitSec, endSec: telop.endSec, emphasis: [] as TelopEmphasis[], speaker: telop.speaker };
 
       return [
         ...autoSplit12chars(beforeTelop, properNouns, tokenizer, maxChars),
@@ -389,11 +407,13 @@ function autoSplit12chars(
     }
   }
 
-  const center = Math.floor(telop.text.length / 2);
+  // 長文(25字超)は前半12字以内の最良位置で切り、後半を再帰処理
+  const isLongText = telop.text.length > maxChars * 2;
+  const center = isLongText ? maxChars : Math.floor(telop.text.length / 2);
   let bestSplit = -1;
   let bestDistance = Infinity;
   for (const p of extendedCandidates) {
-    if (p <= maxChars + 1 && (telop.text.length - p) <= maxChars) {
+    if (p <= maxChars + 1 && (isLongText || (telop.text.length - p) <= maxChars)) {
       // 13字は終助詞行頭回避時のみ許容
       if (p > maxChars && !SHUUJOSHI_CHARS.includes(telop.text[p - 1])) continue;
       const firstText = telop.text.slice(0, p);
@@ -495,7 +515,7 @@ function autoSplit12chars(
         if (insideProperNoun) continue;
         if (isInvalidSplitPos(telop.text, splitPos, properNouns)) continue;
 
-        if (splitPos <= maxChars && (telop.text.length - splitPos) <= maxChars) {
+        if (splitPos <= maxChars && (isLongText || (telop.text.length - splitPos) <= maxChars)) {
           const firstText = telop.text.slice(0, splitPos);
           const secondText = telop.text.slice(splitPos);
           if (firstText.endsWith(' ') || secondText.startsWith(' ')) continue;
@@ -593,13 +613,13 @@ function autoSplit12chars(
   console.log(`     ✂️  Split "${telop.text}" → "${firstText}" + "${secondText}"`);
 
   const firstTelopResult = autoSplit12chars(
-    { text: firstText, startSec: telop.startSec, endSec: splitTime, emphasis: firstEmphasis },
+    { text: firstText, startSec: telop.startSec, endSec: splitTime, emphasis: firstEmphasis, speaker: telop.speaker },
     properNouns,
     tokenizer,
     maxChars,
   );
   const secondTelopResult = autoSplit12chars(
-    { text: secondText, startSec: splitTime, endSec: telop.endSec, emphasis: secondEmphasis },
+    { text: secondText, startSec: splitTime, endSec: telop.endSec, emphasis: secondEmphasis, speaker: telop.speaker },
     properNouns,
     tokenizer,
     maxChars,
@@ -612,7 +632,8 @@ function mergeShortTelops(
   telops: RefinedTelop[],
   properNouns: string[],
   tokenizer: any,
-  minChars: number = 4
+  minChars: number = 4,
+  minDurationSec: number = 0.6,
 ): RefinedTelop[] {
   // 単純な1パス: 短いテロップを前と統合（12字以内なら）
   let merged = [...telops];
@@ -630,12 +651,13 @@ function mergeShortTelops(
 
       const isProperNoun = properNouns.some(p => cur.text === p);
 
-      if (cur.text.length >= minChars || isProperNoun) {
+      const curDuration = cur.endSec - cur.startSec;
+      if ((cur.text.length >= minChars && curDuration >= minDurationSec) || isProperNoun) {
         result.push(cur);
         continue;
       }
 
-      // 3字以下: 前と統合
+      // 短い(字数不足 or 表示時間不足): 前と統合
       if (result.length > 0) {
         const prev = result[result.length - 1];
         const mergedText = prev.text + cur.text;
@@ -645,8 +667,9 @@ function mergeShortTelops(
             startSec: prev.startSec,
             endSec: cur.endSec,
             emphasis: prev.emphasis || [],
+            speaker: prev.speaker,
           };
-          if (pass === 1) console.log(`     🔀 Merge short "${cur.text}" → "${mergedText}"`);
+          if (pass === 1) console.log(`     🔀 Merge short "${cur.text}" (${curDuration.toFixed(2)}s) → "${mergedText}"`);
           changed = true;
           continue;
         }
@@ -663,8 +686,9 @@ function mergeShortTelops(
             startSec: cur.startSec,
             endSec: next.endSec,
             emphasis: cur.emphasis || [],
+            speaker: cur.speaker,
           });
-          if (pass === 1) console.log(`     🔀 Merge short fwd "${cur.text}" → "${mergedText}"`);
+          if (pass === 1) console.log(`     🔀 Merge short fwd "${cur.text}" (${curDuration.toFixed(2)}s) → "${mergedText}"`);
           i++;
           changed = true;
           continue;
@@ -824,12 +848,29 @@ async function processOneCandidate(
     text = removePunctuation(text);
     text = applyDictionary(text);
     text = text.trim();  // 先頭末尾の余分なスペース除去
-    return { text, startSec: t.startSec, endSec: t.endSec, emphasis: [] };
+    return { text, startSec: t.startSec, endSec: t.endSec, emphasis: [], ...(t.camId ? { speaker: t.camId } : {}) };
   }).filter(t => t.text.length > 0);
+
+  // 2.5. 同一話者の連続テロップを結合（意味単位で再分割するための前処理）
+  // whisperX の細切れ word 時刻を解消し、autoSplit12chars で意味区切りの分割を得る
+  const joined: RefinedTelop[] = [];
+  for (const t of processed) {
+    const last = joined.length > 0 ? joined[joined.length - 1] : null;
+    if (last && last.speaker && t.speaker && last.speaker === t.speaker) {
+      // 同一話者 → 結合
+      last.text += t.text;
+      last.endSec = t.endSec;
+    } else {
+      joined.push({ ...t });
+    }
+  }
+  if (joined.length < processed.length) {
+    console.log(`   🔗 Speaker-join: ${processed.length} → ${joined.length} telops`);
+  }
 
   // 3. 12字分割 + 分割後の trim
   const splitTelops: RefinedTelop[] = [];
-  for (const t of processed) {
+  for (const t of joined) {
     const splits = autoSplit12chars(t, properNouns, tokenizer);
     for (const s of splits) {
       s.text = s.text.trim();
@@ -894,6 +935,7 @@ async function processOneCandidate(
           startSec: cur.startSec,
           endSec: next.endSec,
           emphasis: [...(cur.emphasis || []), ...(next.emphasis || [])],
+          speaker: cur.speaker,
         };
         console.log(`     🔗 Merge "${cur.text}" + "${next.text}" → "${merged.text}" (rule: ${matchedRule})`);
         splitTelops[i] = merged;
@@ -907,6 +949,7 @@ async function processOneCandidate(
           startSec: cur.startSec,
           endSec: next.endSec,
           emphasis: [],
+          speaker: cur.speaker,
         };
         const reSplit = autoSplit12chars(tempTelop, properNouns, tokenizer);
         if (reSplit.length >= 2) {

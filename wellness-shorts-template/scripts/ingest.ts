@@ -33,6 +33,7 @@ type DetailedCandidate = {
     startSec: number;  // 絶対時刻
     endSec: number;
     emphasis: Array<{ start: number; end: number; label?: string }>;
+    speaker?: string;
   }>;
   totalEmphasis: number;
 };
@@ -82,6 +83,60 @@ function generateCameraSwitches(
   return switches;
 }
 
+/**
+ * 話者ベースのカメラ切替生成（対談用）
+ * - speaker が変わるたびにカメラ切替
+ * - 相槌スキップ: 話者の連続発話が minDurationSec 未満なら切替えない
+ */
+function generateSpeakerCameraSwitches(
+  telops: Array<{ startSec: number; endSec: number; speaker?: string }>,
+  minDurationSec: number = 1.5,
+): CameraSwitch[] {
+  if (telops.length === 0) return [];
+
+  // 話者が連続する区間をグループ化
+  type SpeakerBlock = { speaker: string; startSec: number; endSec: number };
+  const blocks: SpeakerBlock[] = [];
+  let curSpeaker = telops[0].speaker ?? 'host';
+  let blockStart = telops[0].startSec;
+  let blockEnd = telops[0].endSec;
+
+  for (let i = 1; i < telops.length; i++) {
+    const t = telops[i];
+    const spk = t.speaker ?? curSpeaker;
+    if (spk === curSpeaker) {
+      blockEnd = t.endSec;
+    } else {
+      blocks.push({ speaker: curSpeaker, startSec: blockStart, endSec: blockEnd });
+      curSpeaker = spk;
+      blockStart = t.startSec;
+      blockEnd = t.endSec;
+    }
+  }
+  blocks.push({ speaker: curSpeaker, startSec: blockStart, endSec: blockEnd });
+
+  // 相槌スキップ: minDurationSec 未満のブロックを前のブロックに吸収
+  const filtered: SpeakerBlock[] = [blocks[0]];
+  for (let i = 1; i < blocks.length; i++) {
+    const dur = blocks[i].endSec - blocks[i].startSec;
+    if (dur < minDurationSec) {
+      // 短すぎ → 前のブロックに吸収（カメラ切替えない）
+      filtered[filtered.length - 1].endSec = blocks[i].endSec;
+    } else {
+      filtered.push(blocks[i]);
+    }
+  }
+
+  // ブロック → CameraSwitch
+  const switches: CameraSwitch[] = [];
+  for (const block of filtered) {
+    const camera = block.speaker as CameraSwitch['camera'];
+    switches.push({ atSec: block.startSec, camera });
+  }
+
+  return switches;
+}
+
 async function main() {
   const onlyIdx = process.argv.indexOf('--only');
   const onlyShortId = onlyIdx >= 0 ? process.argv[onlyIdx + 1] : null;
@@ -124,7 +179,7 @@ async function main() {
 
   for (const candidate of targetCandidates) {
     // 1. telops を相対秒に変換
-    const telops: Telop[] = candidate.telops.map(t => ({
+    const telopsWithSpeaker = candidate.telops.map(t => ({
       text: t.text,
       startSec: t.startSec - candidate.startSec,
       endSec: t.endSec - candidate.startSec,
@@ -133,7 +188,9 @@ async function main() {
         end: e.end,
         ...(e.label ? { label: e.label } : {}),
       })),
+      ...(t.speaker ? { speaker: t.speaker } : {}),
     }));
+    const telops: Telop[] = telopsWithSpeaker;
 
     // 2. cameraSwitches 計算
     let cameraSwitches: CameraSwitch[];
@@ -144,14 +201,19 @@ async function main() {
       // 一人語り: 画角切替なし、指定カメラ固定
       cameraSwitches = [{ atSec: 0, camera: cameraMode as 'left' | 'right' }];
     } else {
-      // 対談: 交互切替（後で話者連動に変更予定）
-      cameraSwitches = generateCameraSwitches(
-        telops,
-        config.cameraSwitch.minInterval,
-        config.cameraSwitch.maxInterval,
-        config.cameraSwitch.boundaryGapSec,
-        config.cameraSwitch.firstSwitchWithinSec,
-      );
+      // 対談: 話者ベース切替（speaker情報があれば）、無ければ時間ベースにフォールバック
+      const hasSpeaker = telopsWithSpeaker.some(t => t.speaker && t.speaker !== '');
+      if (hasSpeaker) {
+        cameraSwitches = generateSpeakerCameraSwitches(telopsWithSpeaker);
+      } else {
+        cameraSwitches = generateCameraSwitches(
+          telops,
+          config.cameraSwitch.minInterval,
+          config.cameraSwitch.maxInterval,
+          config.cameraSwitch.boundaryGapSec,
+          config.cameraSwitch.firstSwitchWithinSec,
+        );
+      }
     }
 
     // 3. ShortScript 構築

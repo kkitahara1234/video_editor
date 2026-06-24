@@ -9,6 +9,7 @@ export type RefinedTelop = {
   startSec: number;
   endSec: number;
   emphasis: TelopEmphasis[];
+  speaker?: string;
 };
 
 export type HookFirstTelop = {

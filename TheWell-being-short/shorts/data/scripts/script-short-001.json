@@ -1,0 +1,456 @@
+{
+  "shortId": "short-001",
+  "title": "ゲスト紹介と起業のきっかけ",
+  "startSec": 136.1,
+  "endSec": 236.716,
+  "telops": [
+    {
+      "text": "大活躍女性",
+      "startSec": 0.017,
+      "endSec": 0.755,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "起業家ということでそん",
+      "startSec": 0.755,
+      "endSec": 2.378,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "なことは全然な",
+      "startSec": 2.378,
+      "endSec": 3.446,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "いんですけれども",
+      "startSec": 3.446,
+      "endSec": 4.666,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ありがとうご",
+      "startSec": 4.666,
+      "endSec": 5.581,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ざいますこれはラジオでお",
+      "startSec": 5.581,
+      "endSec": 7.149,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "聞きいただいている",
+      "startSec": 7.149,
+      "endSec": 8.325,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "方なんですけど髪の毛が",
+      "startSec": 8.325,
+      "endSec": 9.762,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "ピンク色ですごい",
+      "startSec": 9.762,
+      "endSec": 10.808,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 4,
+          "label": "ピンク色"
+        }
+      ],
+      "speaker": "host"
+    },
+    {
+      "text": "特徴的なありがとうござ",
+      "startSec": 10.808,
+      "endSec": 12.245,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "いますこれ",
+      "startSec": 12.245,
+      "endSec": 13.686,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "いつ頃からピンク",
+      "startSec": 13.686,
+      "endSec": 15.204,
+      "emphasis": [
+        {
+          "start": 5,
+          "end": 8,
+          "label": "ピンク"
+        }
+      ],
+      "speaker": "host"
+    },
+    {
+      "text": "シンボルだな",
+      "startSec": 15.204,
+      "endSec": 16.343,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 6,
+          "label": "シンボルだな"
+        }
+      ],
+      "speaker": "host"
+    },
+    {
+      "text": "と思っているんですけど",
+      "startSec": 16.343,
+      "endSec": 18.43,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "そうですね2年くらい",
+      "startSec": 18.81,
+      "endSec": 20.4,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "前からだいたいずっと",
+      "startSec": 20.4,
+      "endSec": 21.99,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ピンクで先発してるって",
+      "startSec": 21.99,
+      "endSec": 23.738,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "感じなんですけど別に",
+      "startSec": 23.738,
+      "endSec": 25.328,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ピンクにしたいから",
+      "startSec": 25.328,
+      "endSec": 26.759,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "特徴的にこれにしようって",
+      "startSec": 26.759,
+      "endSec": 28.667,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ブランディングカラーとか",
+      "startSec": 28.667,
+      "endSec": 30.575,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ではなくピンク以外の色に",
+      "startSec": 30.575,
+      "endSec": 32.482,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "染めると髪の毛が痛むって",
+      "startSec": 32.482,
+      "endSec": 34.39,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "言われているので他の色に",
+      "startSec": 34.39,
+      "endSec": 36.298,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "染めるのを懸念",
+      "startSec": 36.298,
+      "endSec": 37.411,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "してとりあえずいつも",
+      "startSec": 37.411,
+      "endSec": 39.001,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "通りでっていう感じに",
+      "startSec": 39.001,
+      "endSec": 40.59,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "してたら気づいたら2年",
+      "startSec": 40.59,
+      "endSec": 42.339,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "経ってましたそういう",
+      "startSec": 42.339,
+      "endSec": 43.929,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ことなんですかすごい",
+      "startSec": 43.929,
+      "endSec": 45.553,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "特徴的なんでね記憶に",
+      "startSec": 45.553,
+      "endSec": 47.191,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "残りやすいなと思って",
+      "startSec": 47.191,
+      "endSec": 48.828,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "起業したのはいつ頃なんで",
+      "startSec": 48.828,
+      "endSec": 50.794,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "したっけ2016年の7月",
+      "startSec": 50.794,
+      "endSec": 53.658,
+      "emphasis": [
+        {
+          "start": 4,
+          "end": 9,
+          "label": "2016年"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "ですねじゃあ",
+      "startSec": 53.658,
+      "endSec": 54.695,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "もう長いですね",
+      "startSec": 54.695,
+      "endSec": 55.904,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "10年目ぐらい",
+      "startSec": 55.904,
+      "endSec": 57.113,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "10年弱とかになりますね",
+      "startSec": 57.113,
+      "endSec": 59.186,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "なんで起業",
+      "startSec": 59.186,
+      "endSec": 60.05,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "しようと思ったんですか",
+      "startSec": 60.05,
+      "endSec": 61.95,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "もともと格安って",
+      "startSec": 62.229,
+      "endSec": 65.772,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "お酒屋さんで配達員",
+      "startSec": 65.772,
+      "endSec": 66.432,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "をしてたんですけど",
+      "startSec": 66.432,
+      "endSec": 67.945,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "そのとき足をちょっと骨折",
+      "startSec": 67.945,
+      "endSec": 69.962,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "してしまいまして契約社",
+      "startSec": 69.962,
+      "endSec": 71.812,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "員だったので",
+      "startSec": 71.812,
+      "endSec": 72.82,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "お給料が入って",
+      "startSec": 72.82,
+      "endSec": 73.997,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "こなくなりま",
+      "startSec": 73.997,
+      "endSec": 74.478,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "して何かしら在宅でお仕事",
+      "startSec": 74.478,
+      "endSec": 78.471,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "しないとなっていう時に",
+      "startSec": 78.471,
+      "endSec": 82.131,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "副業を始めてそこから",
+      "startSec": 82.131,
+      "endSec": 85.458,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "副業の金額というか収入が",
+      "startSec": 85.458,
+      "endSec": 89.451,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "大きくなったので起業しよ",
+      "startSec": 89.451,
+      "endSec": 93.41,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "うかという",
+      "startSec": 93.41,
+      "endSec": 94.904,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "感じで特に最初はビ",
+      "startSec": 94.904,
+      "endSec": 97.594,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "ジョンとか夢とかな",
+      "startSec": 97.594,
+      "endSec": 98.075,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "く税金的にみたいな",
+      "startSec": 98.075,
+      "endSec": 99.67,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "感じで起業",
+      "startSec": 99.67,
+      "endSec": 100.556,
+      "emphasis": [],
+      "speaker": "host"
+    }
+  ],
+  "cameraSwitches": [
+    {
+      "atSec": 0,
+      "camera": "host"
+    },
+    {
+      "atSec": 18.81,
+      "camera": "guest"
+    },
+    {
+      "atSec": 53.66,
+      "camera": "host"
+    },
+    {
+      "atSec": 74.48,
+      "camera": "guest"
+    }
+  ]
+}

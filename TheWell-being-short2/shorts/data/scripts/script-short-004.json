@@ -1,0 +1,240 @@
+{
+  "shortId": "short-004",
+  "title": "仕事が人生の軸",
+  "startSec": 1357.4,
+  "endSec": 1406.9,
+  "telops": [
+    {
+      "text": "いい人生を送るために",
+      "startSec": 0.915,
+      "endSec": 2.108,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "大切にしていることを",
+      "startSec": 2.108,
+      "endSec": 3.301,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "教えてください",
+      "startSec": 3.301,
+      "endSec": 4.136,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "ちょっと書いてるのは",
+      "startSec": 6.737,
+      "endSec": 8.316,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "仕事に全力って",
+      "startSec": 8.316,
+      "endSec": 9.421,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "書いてあるんですけど",
+      "startSec": 9.421,
+      "endSec": 11.0,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "僕さっきちょっと",
+      "startSec": 11.0,
+      "endSec": 12.263,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "バイアウトで燃え尽きた",
+      "startSec": 12.263,
+      "endSec": 14.0,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "人の話みたいなの",
+      "startSec": 14.0,
+      "endSec": 15.263,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "出てきたと思うんですけ",
+      "startSec": 15.263,
+      "endSec": 16.999,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "どやっぱりこの2年間結構",
+      "startSec": 16.999,
+      "endSec": 18.894,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "仕事っていうよりは趣味の",
+      "startSec": 18.894,
+      "endSec": 20.789,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "拡大みたいなところに時間",
+      "startSec": 20.789,
+      "endSec": 22.683,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "使ってみたり",
+      "startSec": 22.683,
+      "endSec": 23.63,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "とかしていたりあと未来を",
+      "startSec": 23.63,
+      "endSec": 25.525,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "今後どうしていくか",
+      "startSec": 25.525,
+      "endSec": 26.946,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ということをそれこそ",
+      "startSec": 26.946,
+      "endSec": 28.525,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "GPDとかと会話する上で",
+      "startSec": 28.525,
+      "endSec": 30.419,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "売却して個人の",
+      "startSec": 30.419,
+      "endSec": 31.524,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "もうちょっとゆとりを",
+      "startSec": 31.524,
+      "endSec": 33.103,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "持って生きるみたいな",
+      "startSec": 33.103,
+      "endSec": 34.682,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "道とかも色々模索",
+      "startSec": 34.682,
+      "endSec": 35.945,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "してみたもののやっぱり",
+      "startSec": 35.945,
+      "endSec": 37.682,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "仕事が一番",
+      "startSec": 37.682,
+      "endSec": 38.471,
+      "emphasis": [
+        {
+          "start": 3,
+          "end": 5,
+          "label": "一番"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "エンターテインメントで",
+      "startSec": 38.471,
+      "endSec": 40.208,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "楽しくて仕事を中心に",
+      "startSec": 40.208,
+      "endSec": 41.787,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "据えて充実したビジネスを",
+      "startSec": 41.787,
+      "endSec": 43.681,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "中心に生きていくっていう",
+      "startSec": 43.681,
+      "endSec": 45.576,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "のが一番ハッピーだなって",
+      "startSec": 45.576,
+      "endSec": 47.471,
+      "emphasis": [
+        {
+          "start": 2,
+          "end": 8,
+          "label": "一番ハッピー"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "いうことに",
+      "startSec": 47.471,
+      "endSec": 48.26,
+      "emphasis": [],
+      "speaker": "guest"
+    }
+  ],
+  "cameraSwitches": [
+    {
+      "atSec": 0,
+      "camera": "host"
+    },
+    {
+      "atSec": 6.74,
+      "camera": "guest"
+    }
+  ]
+}

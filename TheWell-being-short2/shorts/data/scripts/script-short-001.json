@@ -1,0 +1,444 @@
+{
+  "shortId": "short-001",
+  "title": "物販からの転身",
+  "startSec": 367.5,
+  "endSec": 458.5,
+  "telops": [
+    {
+      "text": "このエルステップの",
+      "startSec": 0.848,
+      "endSec": 2.289,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "関連の会社",
+      "startSec": 2.289,
+      "endSec": 3.089,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "に細かいことを",
+      "startSec": 3.089,
+      "endSec": 4.308,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "言うとちょっとその5年間",
+      "startSec": 4.308,
+      "endSec": 6.398,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "エルステップに到達",
+      "startSec": 6.398,
+      "endSec": 7.965,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "するまでにはあって最初は",
+      "startSec": 7.965,
+      "endSec": 10.055,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ネット通販を一人で",
+      "startSec": 10.055,
+      "endSec": 11.622,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "背取りとか個人でやる",
+      "startSec": 11.622,
+      "endSec": 13.364,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ネットでの物販ビジネスを",
+      "startSec": 13.364,
+      "endSec": 15.454,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ひっそりとカフェで",
+      "startSec": 15.454,
+      "endSec": 17.021,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "パソコン",
+      "startSec": 17.021,
+      "endSec": 17.718,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "一台でやってました",
+      "startSec": 17.718,
+      "endSec": 19.285,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "カメラを例えば海外の",
+      "startSec": 19.285,
+      "endSec": 21.026,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "サイトで売ったりとか車の",
+      "startSec": 21.026,
+      "endSec": 23.116,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "部品を中国から仕入れて",
+      "startSec": 23.116,
+      "endSec": 25.032,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "オリジナル",
+      "startSec": 25.032,
+      "endSec": 25.903,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 5,
+          "label": "オリジナル"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "パッケージみたいな感じで",
+      "startSec": 25.903,
+      "endSec": 27.992,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "自分ブランドっぽく見せて",
+      "startSec": 27.992,
+      "endSec": 30.082,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "楽天とかで売ったりとか",
+      "startSec": 30.082,
+      "endSec": 31.998,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "いろんなものを右から左へ",
+      "startSec": 31.998,
+      "endSec": 34.088,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "横流すみたいなことをやっ",
+      "startSec": 34.088,
+      "endSec": 36.178,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ていてなるほど人と",
+      "startSec": 36.178,
+      "endSec": 37.745,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "関わらずになるべく生きて",
+      "startSec": 37.745,
+      "endSec": 39.835,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "いきたいみたいな当時",
+      "startSec": 39.835,
+      "endSec": 41.576,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ポリシーがあったので",
+      "startSec": 41.576,
+      "endSec": 43.318,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "それを5年くら",
+      "startSec": 43.318,
+      "endSec": 44.537,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "いやっていた",
+      "startSec": 44.537,
+      "endSec": 45.582,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "感じですねなるほど",
+      "startSec": 45.582,
+      "endSec": 47.149,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "そこからねなんかまた",
+      "startSec": 48.049,
+      "endSec": 49.742,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "BtoBですもんね",
+      "startSec": 49.742,
+      "endSec": 51.265,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "そうですねはい",
+      "startSec": 51.265,
+      "endSec": 52.45,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "物販が泣かず飛ばずで",
+      "startSec": 52.45,
+      "endSec": 53.836,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "本当に在庫を抱えて",
+      "startSec": 53.836,
+      "endSec": 55.083,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "クレジットで仕入れたのに",
+      "startSec": 55.083,
+      "endSec": 56.746,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "支払いも間に合わずリボ",
+      "startSec": 56.746,
+      "endSec": 58.271,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "払い増えてってみたいな",
+      "startSec": 58.271,
+      "endSec": 59.795,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "感じで売り上げ",
+      "startSec": 59.795,
+      "endSec": 60.766,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "あるんだけど",
+      "startSec": 60.766,
+      "endSec": 61.597,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "在庫もたくさんあって",
+      "startSec": 61.597,
+      "endSec": 62.983,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "カードの払いも",
+      "startSec": 62.983,
+      "endSec": 63.953,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "めっちゃあるみたいなすご",
+      "startSec": 63.953,
+      "endSec": 65.616,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "い泣かず飛ばずな感じを",
+      "startSec": 65.616,
+      "endSec": 67.141,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ずっと過ごしていたときに",
+      "startSec": 67.141,
+      "endSec": 68.804,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "L7の開発者と出会う",
+      "startSec": 68.804,
+      "endSec": 70.19,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "機会があって僕がやってる",
+      "startSec": 70.19,
+      "endSec": 71.853,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "のは",
+      "startSec": 71.853,
+      "endSec": 72.13,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "マーケティングじゃなく",
+      "startSec": 72.13,
+      "endSec": 73.655,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "てただの転売なんで",
+      "startSec": 73.655,
+      "endSec": 74.902,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "それだと一生油脱",
+      "startSec": 74.902,
+      "endSec": 76.011,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "上がらないよって",
+      "startSec": 76.011,
+      "endSec": 77.119,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "いうことを指摘",
+      "startSec": 77.119,
+      "endSec": 78.09,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "していただきだから俺が",
+      "startSec": 78.09,
+      "endSec": 79.614,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "マーケティングを",
+      "startSec": 79.614,
+      "endSec": 80.723,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "教えるからうちでちょっと",
+      "startSec": 80.723,
+      "endSec": 82.386,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "仕事",
+      "startSec": 82.386,
+      "endSec": 82.663,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "手伝ってくれないかってい",
+      "startSec": 82.663,
+      "endSec": 84.326,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "うオファーをいただいて",
+      "startSec": 84.326,
+      "endSec": 85.851,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "そっからそのL7の会社で",
+      "startSec": 85.851,
+      "endSec": 87.514,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "働き出したっていう風にし",
+      "startSec": 87.514,
+      "endSec": 89.177,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "て物販を辞めたという感じ",
+      "startSec": 89.177,
+      "endSec": 90.84,
+      "emphasis": [],
+      "speaker": "guest"
+    }
+  ],
+  "cameraSwitches": [
+    {
+      "atSec": 0,
+      "camera": "host"
+    },
+    {
+      "atSec": 3.09,
+      "camera": "guest"
+    }
+  ]
+}

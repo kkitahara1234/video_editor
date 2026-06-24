@@ -1,0 +1,448 @@
+{
+  "shortId": "short-002",
+  "title": "売却の葛藤と選択",
+  "startSec": 590.4,
+  "endSec": 675.3,
+  "telops": [
+    {
+      "text": "後に考えている",
+      "startSec": 0.071,
+      "endSec": 1.083,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "展開とかはあるんですか",
+      "startSec": 1.083,
+      "endSec": 2.673,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "悩んでてちょっと相談に",
+      "startSec": 2.673,
+      "endSec": 4.388,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "乗ってほしいぐらい",
+      "startSec": 4.388,
+      "endSec": 5.792,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "なんですけど結論ちょっと",
+      "startSec": 5.792,
+      "endSec": 7.663,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "結論出てないが",
+      "startSec": 7.663,
+      "endSec": 8.755,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "結論っていう",
+      "startSec": 8.755,
+      "endSec": 9.691,
+      "emphasis": [
+        {
+          "start": 0,
+          "end": 2,
+          "label": "結論"
+        }
+      ],
+      "speaker": "guest"
+    },
+    {
+      "text": "感じになってますいろいろ",
+      "startSec": 9.691,
+      "endSec": 11.562,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "この仕組みを例えば",
+      "startSec": 11.562,
+      "endSec": 12.966,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "もうちょっと会社の",
+      "startSec": 12.966,
+      "endSec": 14.369,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "バリューとして高めていき",
+      "startSec": 14.369,
+      "endSec": 16.241,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "売却して何か一旦ちょっと",
+      "startSec": 16.241,
+      "endSec": 18.112,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "個人として理覚を",
+      "startSec": 18.112,
+      "endSec": 19.36,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "するみたいな道もあれば",
+      "startSec": 19.36,
+      "endSec": 21.075,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "逆になんかそういうSNS",
+      "startSec": 21.075,
+      "endSec": 22.947,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "マーケットLINE今",
+      "startSec": 22.947,
+      "endSec": 24.506,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "特価でやってるんで",
+      "startSec": 24.506,
+      "endSec": 25.91,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "それなりに",
+      "startSec": 25.91,
+      "endSec": 26.69,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "とかってはいるんですけど",
+      "startSec": 26.69,
+      "endSec": 28.561,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "もう少し広告とかSNS",
+      "startSec": 28.561,
+      "endSec": 30.276,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "マーケットの支援も絡めた",
+      "startSec": 30.276,
+      "endSec": 32.148,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "マーケティング支援に展開",
+      "startSec": 32.148,
+      "endSec": 34.019,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "していくも",
+      "startSec": 34.019,
+      "endSec": 34.799,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "あると思いますしいろんな",
+      "startSec": 34.799,
+      "endSec": 36.67,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "道を模索したんですけど",
+      "startSec": 36.67,
+      "endSec": 38.386,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "今のスタイル別に",
+      "startSec": 38.386,
+      "endSec": 39.633,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "気に入ってるし",
+      "startSec": 39.633,
+      "endSec": 40.725,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "尖ってるんで売った",
+      "startSec": 40.725,
+      "endSec": 42.129,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ところで何するのっていう",
+      "startSec": 42.129,
+      "endSec": 44.0,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "のもあるし新しい",
+      "startSec": 44.0,
+      "endSec": 45.248,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "事業にや",
+      "startSec": 45.248,
+      "endSec": 45.872,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "りたいことみたいなのが",
+      "startSec": 45.872,
+      "endSec": 47.587,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "めっちゃあるわけではない",
+      "startSec": 47.587,
+      "endSec": 49.458,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ので現状維持をいい",
+      "startSec": 49.458,
+      "endSec": 50.862,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "意味でしていこうかな",
+      "startSec": 50.862,
+      "endSec": 52.421,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "と思ってます確かにね",
+      "startSec": 52.421,
+      "endSec": 53.981,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "とりあえずって言って",
+      "startSec": 53.981,
+      "endSec": 55.331,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "会社を売却される",
+      "startSec": 55.331,
+      "endSec": 56.412,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "方とかもいらっ",
+      "startSec": 56.412,
+      "endSec": 57.357,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "しゃるんですけどその後",
+      "startSec": 57.357,
+      "endSec": 58.843,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "結構ねなんて",
+      "startSec": 58.843,
+      "endSec": 59.653,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "言うんでしょうもぬけの",
+      "startSec": 59.653,
+      "endSec": 61.138,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "殻というか結構それで",
+      "startSec": 61.138,
+      "endSec": 62.489,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "メンタル落ちちゃう",
+      "startSec": 62.489,
+      "endSec": 63.704,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "人とかいらっ",
+      "startSec": 63.704,
+      "endSec": 64.515,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "しゃいますよやっぱりいま",
+      "startSec": 64.515,
+      "endSec": 66.135,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "すかちょっと教えてほ",
+      "startSec": 66.135,
+      "endSec": 67.486,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "しいですねちょっと未",
+      "startSec": 67.486,
+      "endSec": 68.836,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "来があんまりわかんなくて",
+      "startSec": 68.836,
+      "endSec": 70.094,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "川井さんでも本当す",
+      "startSec": 70.094,
+      "endSec": 71.038,
+      "emphasis": [],
+      "speaker": "guest"
+    },
+    {
+      "text": "ごいワリワリ",
+      "startSec": 71.038,
+      "endSec": 71.776,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "仕事されてたんだけど",
+      "startSec": 71.776,
+      "endSec": 73.007,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "売却されて急にや",
+      "startSec": 73.007,
+      "endSec": 73.991,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "ることなくなっちゃってそ",
+      "startSec": 73.991,
+      "endSec": 75.468,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "うですよねもうなんか",
+      "startSec": 75.468,
+      "endSec": 76.699,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "毎日家とセブンイレブンで",
+      "startSec": 76.699,
+      "endSec": 78.175,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "コーヒー買いに行くのを",
+      "startSec": 78.175,
+      "endSec": 79.529,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "繰り返してNetflix",
+      "startSec": 79.529,
+      "endSec": 81.006,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "見る生活みたいな",
+      "startSec": 81.006,
+      "endSec": 81.99,
+      "emphasis": [],
+      "speaker": "host"
+    },
+    {
+      "text": "なっちゃってどうしようか",
+      "startSec": 82.651,
+      "endSec": 84.392,
+      "emphasis": [],
+      "speaker": "guest"
+    }
+  ],
+  "cameraSwitches": [
+    {
+      "atSec": 0,
+      "camera": "host"
+    },
+    {
+      "atSec": 2.67,
+      "camera": "guest"
+    },
+    {
+      "atSec": 53.98,
+      "camera": "host"
+    }
+  ]
+}

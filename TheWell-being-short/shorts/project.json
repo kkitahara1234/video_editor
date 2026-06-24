@@ -1,0 +1,86 @@
+{
+  "projectName": "TheWell-being-short",
+  "sourceDir": "/Volumes/編集用/TheWell-being-short/public",
+  "workDir": "./data/work",
+  "outputDir": "./data/output",
+  "shortsCount": {
+    "perMinutes": 28,
+    "minPer": 3,
+    "maxPer": 5
+  },
+  "scoreThreshold": 7.0,
+  "duration": {
+    "min": 45,
+    "max": 180
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "cameraSwitch": {
+    "minInterval": 20,
+    "maxInterval": 40,
+    "boundaryGapSec": 0.3,
+    "firstSwitchWithinSec": 3.0
+  },
+  "cropOffsets": {
+    "front": {
+      "x": 0,
+      "y": 0
+    },
+    "left": {
+      "x": 0,
+      "y": 0
+    },
+    "right": {
+      "x": 0,
+      "y": 0
+    },
+    "host": {
+      "x": 0,
+      "y": 0
+    },
+    "guest": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "telop": {
+    "fontSize": 80,
+    "emphasisFontSize": 120,
+    "maxChars": 12,
+    "fontFamily": "\"Tazugane Gothic StdN\", \"MT たづがね角ゴシック StdN\", \"TazuganeGothicStdN-Medium\", \"たづがね角ゴシック StdN Medium\", \"Noto Sans JP\", sans-serif",
+    "color": "#FFFFFF",
+    "backgroundColor": "#000000",
+    "positionFromBottom": 320,
+    "minEmphasisCount": 3,
+    "maxEmphasisCount": 7
+  },
+  "animations": {
+    "telop": {
+      "type": "fadeScale",
+      "duration": 0.15,
+      "scaleFrom": 0.9
+    },
+    "emphasis": {
+      "type": "delayedPop",
+      "delay": 0.1,
+      "scaleFrom": 1.1,
+      "scaleTo": 1.0
+    },
+    "firstTelop": {
+      "type": "slideUp",
+      "duration": 0.3,
+      "offsetY": 50
+    }
+  },
+  "gpt": {
+    "model": "gpt-4o-mini",
+    "maxTokensPerCall": 8000,
+    "temperature": 0.3
+  },
+  "sharedDictionary": "/Volumes/編集用/wellness-shared/dictionary.json",
+  "talkType": "dialogue",
+  "xlsxPath": "/Volumes/編集用/TheWell-being-short/script_check.xlsx"
+}
