@@ -1,6 +1,6 @@
 # 既知の罠カタログ
 
-最終更新: 2026-06-08
+最終更新: 2026-07-02
 
 ## 目的
 
@@ -25,6 +25,12 @@
 - 症状: 「外付け SSD に書いてる」と思っても実は内蔵 SSD
 - 原因: public/ などの symlink を誤認識
 - 対処: readlink で symlink 先を確認してから書き込む
+
+### 罠1-4: ENOSPC（外付け SSD 容量枯渇でフレームレンダリング中断）
+- 症状: `Error: ENOSPC: no space left on device, write` でフレームレンダリングが途中停止（1067/20283等）
+- 原因: 外付け SSD 残容量不足。20283フレーム×JPEG≈2GB必要だが残2.3GBでマージン不足
+- 対処: render 前に `df -h /Volumes/編集用/` で空き確認。**最低5GB確保**。不足時は tmp_remotion/ クリア、不要 bak ファイル退避、ゴミ箱を空にする
+- 注意: 内蔵 SSD への TMPDIR 変更は**禁止**（罠1-1）。外付け内で空き確保する
 
 ## 2. Remotion 系
 
@@ -57,6 +63,24 @@
 - 症状: 「ハング」と判断したが実は正常進行
 - 原因: 数分間ログ更新なくても CPU 99% でフレーム生成中の場合あり
 - 対処: ps aux | grep chrome-headless で CPU 使用率確認、停止判断はデータ駆動
+
+### 罠2-7: webpack バンドルフリーズ（外付け SSD 上の大量ファイル走査）
+- 症状: `Bundling 51%`（または38%等）で永久停止。CPU 0%、`sample` で `kevent` 100%ブロック
+- 原因: webpack がプロジェクトディレクトリ全体を走査。`_original_10bit/`（10bit原本MP4 計2.4GB）や `public/` 内の大量 `.bak` ファイル（76個）を開き、外付けSSDのI/Oで詰まる
+- 診断手順:
+  1. `sample <PID> 3` でコールスタック確認 → `kevent` 100% = I/O待ち
+  2. `lsof -p <PID> | grep /Volumes/編集用` で開いているファイル特定
+- 対処:
+  - `_original_10bit/` をプロジェクト外に `mv`（削除でなく退避）
+  - `public/*.bak*` をプロジェクト外に退避
+  - render不要な大容量ファイルをプロジェクトディレクトリに置かない
+- 教訓: Studio は webpack キャッシュで動くが render はクリーンビルド。フリーズ位置が毎回違う（38%/51%）のは I/O タイミング依存
+
+### 罠2-8: resolve.symlinks: false は使ってはいけない
+- 症状: `Module not found: Error: Can't resolve 'mediabunny'`、バンドル38%で停止
+- 原因: remotion.config.ts の webpack override に `resolve: { symlinks: false }` を追加すると、pnpm のシンボリックリンクチェーンが壊れ依存解決に失敗
+- 対処: **symlinks: false は使わない**。シンボリックリンク問題は `resolve.alias` か、symlink をコピー実体に置換して対処
+- 教訓: 過去5本で成功した構成を変えない。新設定追加は1行でも影響範囲を確認
 
 ## 3. テロップ分割系
 
@@ -193,6 +217,7 @@
   - エラー: "EncodingError: The source image cannot be decoded" / "pixel format YUV420P10LE"
 - 原因: 撮影動画が HEVC 10bit (yuv420p10le)。Remotion の render が 10bit をデコードできない
 - 対処: ffmpeg で H.264 8bit (yuv420p) に変換。元ファイルは _original_10bit/ に退避
+- **追加注意**: 退避した `_original_10bit/` はプロジェクトディレクトリ外に移動すること。プロジェクト内に残すと webpack が走査して kevent フリーズを起こす（罠2-7）
 - 教訓: public/ 配置前に ffprobe で pix_fmt 確認。Studio が通っても render で落ちる
 
 ## メンテナンスルール
